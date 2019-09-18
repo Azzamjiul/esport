@@ -18,6 +18,8 @@ class CreateMatchTable extends Migration
             $table->timestamp('match_start')->nullable();
             $table->timestamp('match_end')->nullable();
             $table->string('winner');
+            $table->integer('fk_team_id1');
+            $table->integer('fk_team_id2');
             $table->timestamps();
         });
     }

@@ -8,12 +8,12 @@ use App\Team;
 class Match extends Model
 {
     //
-    public function team_id1()
+    public function fk_team_id1()
     {
     	return $this->hasOne('Team');
     }
 
-    public function team_id2()
+    public function fk_team_id2()
     {
     	return $this->hasOne('Team');
     }

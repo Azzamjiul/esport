@@ -17,6 +17,7 @@ class CreateTeamDetailTable extends Migration
             $table->bigIncrements('id');
             $table->string('game_id');
             $table->string('account_name');
+            $table->integer('fk_team_id');
             $table->timestamps();
         });
     }

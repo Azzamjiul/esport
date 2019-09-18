@@ -10,6 +10,6 @@ class Schema extends Model
     //
     public function team()
     {
-        return $this->belongsTo('Team', 'team_id');
+        return $this->belongsTo('Team', 'fk_team_id');
     }
 }

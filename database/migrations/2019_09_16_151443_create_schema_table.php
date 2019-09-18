@@ -15,6 +15,7 @@ class CreateSchemaTable extends Migration
     {
         Schema::create('schema', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('fk_team_id');
             $table->timestamps();
         });
     }

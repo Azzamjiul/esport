@@ -10,6 +10,6 @@ class Team_Detail extends Model
     //
     public function team()
     {
-    	return $this->hasOne('Team', 'team_id');
+    	return $this->belongsTo('Team', 'fk_team_id');
     }
 }
