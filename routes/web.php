@@ -10,7 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Team;
 
 Route::get('/', function () {
-    return view('home');
+	return Team::find(1)->detail;
+    // return view('home');
+});
+
+Route::get('/operator/dashboard', function () {
+	return view('operator.dashboard');
 });

@@ -9,7 +9,13 @@ use App\Team_Detail;
 
 class Team extends Model
 {
-    //
+    protected $guarded = [''];
+	protected $table = 'team';
+	
+    protected $fillable = [
+        'name', 'email', 'winner', 'telp',
+    ];
+
     public function match1()
     {
         return $this->belongsTo('Match', 'fk_team_id1');
@@ -27,6 +33,6 @@ class Team extends Model
 
     public function detail()
     {
-    	return $this->hasMany('Team_Detail');
+    	return $this->hasMany('App\Team_Detail', 'fk_team_id');
     }
 }

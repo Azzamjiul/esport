@@ -5,6 +5,9 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Match;
+use App\Schema;
+use App\Team_Detail;
 
 class User extends Authenticatable
 {
@@ -16,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'winner'
     ];
 
     /**
@@ -36,4 +39,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function match1()
+    {
+        return $this->belongsTo('Match', 'fk_team_id1');
+    }
+
+    public function match2()
+    {
+        return $this->belongsTo('Match', 'fk_team_id2');
+    }
+
+    public function schema()
+    {
+        return $this->hasOne('Schema');
+    }
+
+    public function detail()
+    {
+        return $this->hasMany('App\Team_Detail', 'fk_team_id');
+    }
 }
