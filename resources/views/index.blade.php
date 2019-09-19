@@ -94,7 +94,7 @@
 															Home
 														</a>
 														<ul class="dropdown-menu">
-															<li><a class="dropdown-item" href="index-classic.html">Default Home</a></li>
+															<!-- <li><a class="dropdown-item" href="index-classic.html">Default Home</a></li> -->
 															<li><a class="dropdown-item" href="index-one-page.html">One Page Website</a></li>
 														</ul>
 													</li>
@@ -118,6 +118,20 @@
 														<a href="{{route('login')}}" class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Login</a>
 													</li>
 													@else
+													<li class="dropdown">
+														<a data-hash class="dropdown-item dropdown-toggle active" href="#home">
+															Halo, {{ Auth::user()->name }}
+														</a>
+														<ul class="dropdown-menu">
+															<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+															Logout
+															</a></li>
+
+															<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+																@csrf
+															</form>
+														</ul>
+													</li>
 													@endguest
 												</ul>
 											</nav>
