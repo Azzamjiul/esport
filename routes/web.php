@@ -10,13 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Team;
-
+Auth::routes();
 Route::get('/', function () {
-	return Team::find(1)->detail;
-    // return view('home');
+    return view('index');
 });
 
 Route::get('/operator/dashboard', function () {
 	return view('operator.dashboard');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
