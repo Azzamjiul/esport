@@ -10,7 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('home')->group(function () {
+    Route::resource('detail_tim','DetailTimController');
+});
+
 Route::get('/', function () {
     return view('index');
 });
@@ -18,13 +26,3 @@ Route::get('/', function () {
 Route::get('/operator/dashboard', function () {
 	return view('operator.dashboard');
 });
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

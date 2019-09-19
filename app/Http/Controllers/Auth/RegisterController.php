@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Team_Detail;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -63,14 +66,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'telp'  => $data['telp'],
-            'invoice' => 50000 + User::count(),
-            'payment_status' => 0,
-            'type' => 0,
-        ]);
+        DB::beginTransaction();
+        try{
+            $wkwk = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'telp'  => $data['telp'],
+                'invoice' => 50000 + User::count(),
+                'payment_status' => 0,
+                'type' => 0,
+            ]);
+                
+            for ($i=0; $i < 7; $i++) { 
+                Team_Detail::create([
+                    'game_id' => 'default',
+                    'account_name' => 'default',
+                    'fk_team_id' => User::count()
+                ]);
+            }
+            
+            DB::commit();
+            return $wkwk;
+        }catch(Exception $e){
+            DB::rollBack();
+            return true;
+        }
     }
 }
