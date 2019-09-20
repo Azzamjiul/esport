@@ -17,6 +17,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('home')->group(function () {
     Route::resource('detail_tim','DetailTimController');
+    Route::post('detail_tim/simpan_permanen', 'DetailTimController@simpan_permanen')->name('detail_tim.simpan_permanen');
 });
 
 Route::get('/', function () {

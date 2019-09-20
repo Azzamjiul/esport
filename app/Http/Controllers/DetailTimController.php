@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Team_Detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +16,13 @@ class DetailTimController extends Controller
      */
     public function index()
     {
-        $teams = Team_Detail::where('fk_team_id', Auth::user()->id)->get();
-        return view('peserta.detail_tim.index', compact('teams'));
+        $team = User::where('id', Auth::user()->id)->first();
+        if($team->registration_status == 1){
+            $team_details = Team_Detail::where('fk_team_id', Auth::user()->id)->get();
+            return view('peserta.detail_tim.index', compact('team','team_details'));
+        }else{
+            return redirect()->route('home')->with('message-error', 'Anda harus melakukan konfirmasi pembayaran terlebih dahulu');
+        }
     }
 
     /**
@@ -93,5 +99,13 @@ class DetailTimController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function simpan_permanen(Request $request){
+        $team = User::where('id', $request->team_id)->first();
+        User::where('id', $request->team_id)->update([
+            'registration_status' => $team->registration_status+1
+        ]);
+        return redirect()->route('home')->with('message-success','Data berhasil diperbaharui');
     }
 }

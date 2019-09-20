@@ -123,6 +123,7 @@
 															Halo, {{ Auth::user()->name }}
 														</a>
 														<ul class="dropdown-menu">
+															<li><a class="dropdown-item" href="{{ route('home') }}">Dashboard</a></li>
 															<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
 															Logout
 															</a></li>

@@ -37,9 +37,7 @@
                     @guest
                     @else
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('detail_tim.index') }}">Detail Tim</a>
-                        </li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="{{ route('detail_tim.index') }}">Detail Tim</a></li> -->
                     </ul>
                     @endguest
 
@@ -62,6 +60,9 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('home') }}">
+                                    {{ __('Dashboard') }}
+                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
