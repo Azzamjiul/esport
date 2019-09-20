@@ -16,27 +16,31 @@
 
                     <div class="row">
                         <div class="col-md-offset-2 col-md-12">
-                            <form action="" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('detail_tim.update', $team->id) }}" method="post" enctype="multipart/form-data">
+                            @method('PUT')
                             @csrf
                                 <div class="form-group">
                                     <label for="">ID MLBB</label>
-                                    <input type="text" name="game_id" class="form-control">
+                                    <input type="text" name="game_id" class="form-control" value="{{ $team->game_id }}" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Nick Name</label>
-                                    <input type="text" name="account_name" class="form-control">
+                                    <input type="text" name="account_name" class="form-control" value="{{ $team->account_name }}" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Nama Lengkap</label>
-                                    <input type="text" name="nama_lengkap" class="form-control">
+                                    <input type="text" name="full_name" class="form-control" value="{{ $team->account_name }}" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Tanda Pengenal</label>
-                                    <input type="file" name="tanda_pengenal" class="form-control">
+                                    <label for="">Tanda Pengenal</label> <br>
+                                    <!-- <input type="file" name="identity_card" value="{{ $team->account_name }}"> -->
+                                    <input type="text" name="identity_card" class="form-control" value="{{ $team->identity_card }}" required>
                                 </div>
+
+                                <button type="submit" class="btn btn-sm btn-success">Simpan Perubahan</button>
                             </form>
                         </div>
                     </div>

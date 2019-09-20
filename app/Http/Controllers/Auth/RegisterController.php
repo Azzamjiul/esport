@@ -74,7 +74,8 @@ class RegisterController extends Controller
                 'password' => Hash::make($data['password']),
                 'telp'  => $data['telp'],
                 'invoice' => 50000 + User::count(),
-                'payment_status' => 0,
+                'fk_operator_id' => 0,
+                'registration_status' => 0,
                 'type' => 0,
             ]);
                 
@@ -82,7 +83,10 @@ class RegisterController extends Controller
                 Team_Detail::create([
                     'game_id' => 'default',
                     'account_name' => 'default',
-                    'fk_team_id' => User::count()
+                    'full_name' => 'default',
+                    'identity_card' => 'noimage.jpg',
+                    'fk_team_id' => User::latest()->first()->id,
+                    'fk_operator_id' => 1
                 ]);
             }
             
@@ -90,7 +94,7 @@ class RegisterController extends Controller
             return $wkwk;
         }catch(Exception $e){
             DB::rollBack();
-            return true;
+            return 0;
         }
     }
 }

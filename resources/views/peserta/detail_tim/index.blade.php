@@ -8,9 +8,9 @@
                 <div class="card-header">Detail Tim</div>
 
                 <div class="card-body">
-                    @if (session('status'))
+                    @if (session('message-success'))
                     <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
+                        {{ session('message-success') }}
                     </div>
                     @endif
 
@@ -37,6 +37,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                    
+                    <form action="{{ route('') }}" method="post">
+                        <button>Fix</button>
+                    </form>
                 </div>
             </div>
         </div>

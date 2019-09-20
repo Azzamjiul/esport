@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->boolean('payment_status');
+            $table->boolean('registration_status');
+            $table->integer('fk_operator_id');
             $table->integer('invoice');
             $table->integer('type');
             $table->string('telp');

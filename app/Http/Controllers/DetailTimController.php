@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Team;
 use App\Team_Detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +59,8 @@ class DetailTimController extends Controller
      */
     public function edit($id)
     {
-        $team =  Team_Detail::where('id', $id)->get();
+        $team =  Team_Detail::where('id', $id)->first();
+        // return $team;
         return view('peserta.detail_tim.edit', compact('team'));
     }
 
@@ -73,7 +73,15 @@ class DetailTimController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // return $request;
+        Team_Detail::where('id', $id)->update([
+            'game_id' => $request->game_id,
+            'account_name' => $request->account_name,
+            'full_name' => $request->full_name,
+            'identity_card' => $request->identity_card
+        ]);
+
+        return redirect()->route('detail_tim.index')->with('message-success','Data berhasil diperbaharui');
     }
 
     /**
