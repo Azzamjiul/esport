@@ -13,13 +13,23 @@ class Match extends Model
         'match_start', 'match_end', 'winner',
     ];
 
-    public function fk_team_id1()
+    public function team_id1()
     {
-    	return $this->hasOne('User');
+    	return $this->hasOne('App\User', 'id', 'fk_team_id1');
     }
 
-    public function fk_team_id2()
+    public function team_id2()
     {
-    	return $this->hasOne('User');
+    	return $this->hasOne('App\User', 'id', 'fk_team_id2');
+    }
+
+    public function win()
+    {
+        return $this->hasOne('App\User', 'id');
+    }
+
+    public function photo()
+    {
+        return $this->hasMany('App\Photo', 'fk_match_id');
     }
 }

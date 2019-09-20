@@ -29,14 +29,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 
     public function match1()
     {
@@ -48,6 +40,11 @@ class User extends Authenticatable
         return $this->belongsTo('Match', 'fk_team_id2');
     }
 
+    public function winmatch()
+    {
+        return $this->belongsTo('Match', 'winner');
+    }
+
     public function schema()
     {
         return $this->hasOne('Schema');
@@ -55,6 +52,6 @@ class User extends Authenticatable
 
     public function detail()
     {
-        return $this->hasMany('App\Team_Detail', 'fk_team_id');
+        return $this->hasMany('App\Team_Detail');
     }
 }

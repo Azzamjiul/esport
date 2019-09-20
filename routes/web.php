@@ -26,3 +26,6 @@ Route::get('/', function () {
 Route::get('/operator/dashboard', function () {
 	return view('operator.dashboard');
 });
+
+Route::get('/operator/home', 'OperatorController@index');
+Route::get('/operator/detail/{id}', 'OperatorController@detail')->name('detail');
