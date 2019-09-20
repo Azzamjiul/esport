@@ -17,7 +17,7 @@ class CreateMatchTable extends Migration
             $table->bigIncrements('id');
             $table->timestamp('match_start')->nullable();
             $table->timestamp('match_end')->nullable();
-            $table->string('winner');
+            $table->string('winner')->nullable();
             $table->integer('fk_team_id1');
             $table->integer('fk_team_id2');
             $table->timestamps();

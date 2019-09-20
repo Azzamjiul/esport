@@ -17,6 +17,7 @@ class CreatePhotoTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('fk_match_id');
+            $table->integer('fk_team_id')->nullable();
             $table->timestamps();
         });
     }
