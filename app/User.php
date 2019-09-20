@@ -54,4 +54,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Team_Detail');
     }
+
+    public function photo()
+    {
+        return $this->hasMany('App\Photo', 'id', 'fk_team_id');
+    }
 }
