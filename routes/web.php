@@ -29,5 +29,8 @@ Route::get('/operator/dashboard', function () {
 	return view('operator.dashboard');
 });
 
-Route::get('/operator/home', 'OperatorController@index');
-Route::get('/operator/detail/{id}', 'OperatorController@detail')->name('detail');
+Route::get('/operator/match', 'OperatorController@match');
+Route::get('/operator/match_detail/{id}', 'OperatorController@match_detail')->name('detail');
+Route::get('/operator/team/{id}', 'OperatorController@team');
+Route::get('/verif/{id}', 'OperatorController@verify');
+Route::get('/validation/{id}', 'OperatorController@validation');
