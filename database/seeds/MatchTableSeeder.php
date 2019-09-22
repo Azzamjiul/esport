@@ -1,20 +1,22 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+
+function insertMatchs($match_start, $match_end, $winner, $fk_team_id1, $fk_team_id2) {
+    DB::table('match')->insert([
+        'match_start' => $match_start,
+        'match_end' => $match_end,
+        'winner' => $winner,
+        'fk_team_id1' => $fk_team_id1,
+        'fk_team_id2' => $fk_team_id2,
+        'created_at' => Carbon::now('Asia/Jakarta'),
+        'updated_at' => Carbon::now('Asia/Jakarta')
+    ]); 
+}
 
 class MatchTableSeeder extends Seeder
 {
-    function insertMatchs($match_start, $match_end, $winner, $fk_team_id1, $fk_team_id2) {
-        DB::table('match')->insert([
-            'match_start' => $match_start,
-            'match_end' => $match_end,
-            'winner' => $winner,
-            'fk_team_id1' => $fk_team_id1,
-            'fk_team_id2' => $fk_team_id2,
-            'created_at' => Carbon::now('Asia/Jakarta'),
-            'updated_at' => Carbon::now('Asia/Jakarta')
-        ]); 
-    }
     /**
      * Run the database seeds.
      *
