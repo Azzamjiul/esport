@@ -13,11 +13,12 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/peserta', 'HomeController@index')->name('home');
 
-Route::prefix('home')->group(function () {
-    Route::resource('detail_tim','DetailTimController');
-    Route::post('detail_tim/simpan_permanen', 'DetailTimController@simpan_permanen')->name('detail_tim.simpan_permanen');
+Route::prefix('peserta')->group(function () {
+    Route::resource('peserta','PesertaController');
+    Route::post('peserta/simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('peserta.simpan_tim_permanen');
+    Route::post('pembayaran/upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
 });
 
 Route::get('/', function () {

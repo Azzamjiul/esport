@@ -36,9 +36,6 @@
                     <!-- Left Side Of Navbar -->
                     @guest
                     @else
-                    <ul class="navbar-nav mr-auto">
-                        <!-- <li class="nav-item"><a class="nav-link" href="{{ route('detail_tim.index') }}">Detail Tim</a></li> -->
-                    </ul>
                     @endguest
 
                     <!-- Right Side Of Navbar -->
