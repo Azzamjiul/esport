@@ -36,9 +36,11 @@ class PesertaController extends Controller
         $team = User::where('id', Auth::user()->id)->first();
         if ($team->registration_status == 0) {
             return redirect()->route('home')->with('message-error', 'Anda harus melakukan konfirmasi pembayaran terlebih dahulu');
-        } else {
+        } else if ($team->registration_status < 3) {
             $team_details = Team_Detail::where('fk_team_id', Auth::user()->id)->get();
             return view('peserta.detail_tim.index', compact('team', 'team_details'));
+        } else {
+            return redirect()->route('home')->with('message-error', 'anda tidak diizinkan untuk mengakses halaman tersebut');
         }
     }
 
@@ -151,7 +153,7 @@ class PesertaController extends Controller
             ]);
         }
 
-        return redirect()->route('home')->with('message-success', 'Data berhasil diperbaharui');
+        return redirect()->route('peserta.index')->with('message-success', 'Data berhasil diperbaharui');
     }
 
     /**
