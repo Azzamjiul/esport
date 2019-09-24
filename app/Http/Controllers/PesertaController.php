@@ -173,7 +173,7 @@ class PesertaController extends Controller
         User::where('id', $request->team_id)->update([
             'registration_status' => $team->registration_status + 1
         ]);
-        return redirect()->route('peserta.index')->with('message-success', 'Data berhasil diperbaharui');
+        return redirect()->route('peserta.index')->with('message-success', 'Data berhasil disimpan permanen');
     }
 
     public function upload_bukti(Request $request)
