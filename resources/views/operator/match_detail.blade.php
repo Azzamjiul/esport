@@ -44,7 +44,7 @@
                                 <div class="form-group">
                                     <label for="">Screenshots</label>
                                     @foreach($photos as $photo)
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/screenshots/'.$photo->name) }}"><a>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->name) }}"><a>
                                     @endforeach
                                 </div>
                             </form>

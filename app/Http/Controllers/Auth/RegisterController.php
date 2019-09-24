@@ -76,6 +76,7 @@ class RegisterController extends Controller
                 'invoice' => 50000 + User::count(),
                 'fk_operator_id' => 0,
                 'registration_status' => 0,
+                'bukti_bayar' => NULL,
                 'type' => 0,
             ]);
                 
@@ -86,7 +87,8 @@ class RegisterController extends Controller
                     'full_name' => 'default',
                     'identity_card' => 'noimage.jpg',
                     'fk_team_id' => User::latest()->first()->id,
-                    'fk_operator_id' => 1
+                    'fk_operator_id' => 0,
+                    'validation_status' => 0
                 ]);
             }
             
