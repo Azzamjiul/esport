@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 function insertMatchs($match_start, $match_end, $winner, $fk_team_id1, $fk_team_id2) {
     DB::table('match')->insert([

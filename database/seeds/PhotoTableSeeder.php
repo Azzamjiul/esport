@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 function insertPhotos($name, $fk_match_id, $fk_team_id) {
     DB::table('photo')->insert([

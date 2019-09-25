@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 function insertUsers($user, $email, $regis, $op_id, $invoice, $type, $telp, $pass) {
     DB::table('users')->insert([

@@ -34,3 +34,9 @@ Route::get('/operator/match_detail/{id}', 'OperatorController@match_detail')->na
 Route::get('/operator/team/{id}', 'OperatorController@team');
 Route::get('/verif/{id}', 'OperatorController@verify');
 Route::get('/validation/{id}', 'OperatorController@validation');
+
+Route::get('/match_all', function () {
+    return view('match');
+});
+
+Route::get('match','MatchController@index')->name('match.index');
