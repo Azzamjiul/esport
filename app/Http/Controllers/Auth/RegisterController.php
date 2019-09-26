@@ -80,17 +80,17 @@ class RegisterController extends Controller
                 'type' => 0,
             ]);
                 
-            for ($i=0; $i < 7; $i++) { 
-                Team_Detail::create([
-                    'game_id' => 'default',
-                    'account_name' => 'default',
-                    'full_name' => 'default',
-                    'identity_card' => 'noimage.jpg',
-                    'fk_team_id' => User::latest()->first()->id,
-                    'fk_operator_id' => 0,
-                    'validation_status' => 0
-                ]);
-            }
+            // for ($i=0; $i < 7; $i++) { 
+            //     Team_Detail::create([
+            //         'game_id' => 'default',
+            //         'account_name' => 'default',
+            //         'full_name' => 'default',
+            //         'identity_card' => 'noimage.jpg',
+            //         'fk_team_id' => User::latest()->first()->id,
+            //         'fk_operator_id' => 0,
+            //         'validation_status' => 0
+            //     ]);
+            // }
             
             DB::commit();
             return $wkwk;

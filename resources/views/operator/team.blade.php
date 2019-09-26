@@ -15,13 +15,16 @@
                     </div>
                     @endif
 
-                    <div class="form-group">
-                        <label for="">Bukti Pembayaran</label><br>
-                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$team->bukti_bayar) }}"><a>
-                    </div>
-                    <div>
-                        <a href="{{url('validation', $team->id)}}" class="btn btn-outline-primary">Validasi</a>
-                    </div>
+                    <form action="{{ route('operator.validasi_pembayaran', $team->id) }}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Bukti Pembayaran</label><br>
+                            <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_bayar/'.$team->bukti_bayar) }}"><a>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-outline-primary">Validasi Pembayaran</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             @elseif($team->registration_status == 1)
@@ -84,7 +87,10 @@
                                 @endif
                                 <td>
                                     @if($team_detail->validation_status == 0)
-                                    <a class="btn btn-sm btn-success" href="{{url('verif', $team_detail->id)}}">Verifikasi</a>
+                                    <form action="{{ route('operator.verifikasi_detail_team', $team_detail->id) }}" method="post">
+                                        @csrf
+                                        <button class="btn btn-sm btn-success">Verifikasi</button>
+                                    </form>
                                     @endif
                                 </td>
                             </tr>
@@ -99,7 +105,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="card" style="width: 18rem;">
-                                                <?php $image = 'team_' . Auth::user()->id . '/' . $team_detail->identity_card ?>
+                                                <?php $image = 'team_' . $team->id . '/' . $team_detail->identity_card ?>
                                                 <img src="{{ asset('team_detail') }}/{{$image}}" class="card-img-top" alt="">
                                             </div>
                                             <div class="modal-footer">

@@ -32,8 +32,8 @@ Route::get('/operator/dashboard', function () {
 Route::get('/operator/match', 'OperatorController@match')->name('matchs');
 Route::get('/operator/match_detail/{id}', 'OperatorController@match_detail')->name('match_detail');
 Route::get('/operator/team/{id}', 'OperatorController@team')->name('team_detail');
-Route::post('/verif/{id}', 'OperatorController@verify');
-Route::post('/validation/{id}', 'OperatorController@validation');
+Route::post('/verif/{id}', 'OperatorController@verify')->name('operator.verifikasi_detail_team');;
+Route::post('/validation/{id}', 'OperatorController@validation')->name('operator.validasi_pembayaran');
 Route::get('/operator/team', 'OperatorController@teams')->name('teams');
 
 Route::get('/match_all', function () {

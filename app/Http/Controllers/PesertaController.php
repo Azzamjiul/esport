@@ -23,7 +23,7 @@ class PesertaController extends Controller
         $this->path_team_detail = public_path('team_detail');
         // definiska dimensi
         // $this->dimensions = ['245'];
-        $this->dimension = '300';
+        $this->dimension = '500';
     }
 
     /**
@@ -98,7 +98,6 @@ class PesertaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // return $request;
         $team_detail = Team_Detail::where('id', $id);
         // return $team_detail->first();
 
@@ -114,8 +113,10 @@ class PesertaController extends Controller
 
         // ambil file gambar
         $file = $request->file('identity_card');
+        
 
-        if($file){
+        if ($file) {
+            // return $file;
             // rename file
             $fileName = 'member' . $id . '.' . $file->getClientOriginalExtension();
             
@@ -126,14 +127,16 @@ class PesertaController extends Controller
             $resizeImage = Image::make($file)->resize($this->dimension, $this->dimension, function ($constraint) {
                 $constraint->aspectRatio();
             });
-            
+
+            // return "wkwk";
+
             // masukkan resize image ke canvas
             $canvas->insert($resizeImage, 'center');
 
-            if (!File::isDirectory($this->path_team_detail. '/team_' . Auth::user()->id)) {
-                File::makeDirectory($this->path_team_detail. '/team_' . Auth::user()->id);
+            if (!File::isDirectory($this->path_team_detail . '/team_' . Auth::user()->id)) {
+                File::makeDirectory($this->path_team_detail . '/team_' . Auth::user()->id);
             }
-            
+
             // Upload compressed file
             $canvas->save($this->path_team_detail . '/team_' . Auth::user()->id . '/' . $fileName);
         }
@@ -144,7 +147,7 @@ class PesertaController extends Controller
                 'account_name' => $request->account_name,
                 'full_name' => $request->full_name,
             ]);
-        }else{
+        } else {
             $team_detail->update([
                 'game_id' => $request->game_id,
                 'account_name' => $request->account_name,
@@ -182,6 +185,7 @@ class PesertaController extends Controller
         $this->validate($request, [
             'image' => 'required|image|mimes:jpg,png,jpeg'
         ]);
+
 
         // jika folder beluma da
         if (!File::isDirectory($this->path_bukti_bayar)) {
