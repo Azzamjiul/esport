@@ -12,7 +12,7 @@
 
 <body>
     <!-- <div class="tournament"></div> -->
-    <div class="tournament"></div>
+    <!-- <div class="tournament"></div> -->
     <div class="tournament_1"></div>
     <script src="{{asset('js/core/jquery.min.js')}}"></script>
     <script src="{{asset('js/jquery.gracket.min.js')}}"></script>
@@ -56,7 +56,7 @@
             ]
         ];
 
-        datahehe = [[[{"name":"Azzam Jihad Ulhaq","id":"azzam","seed":1,"round":1},{"name":"budi","id":"budi","seed":2,"round":1}],[{"name":"cika","id":"cika","seed":3,"round":1},{"name":"doni","id":"doni","seed":4,"round":1}]],[[{"name":"Azzam Jihad Ulhaq","id":"azzam","seed":1,"round":1},{"name":"budi","id":"budi","seed":2,"round":1}],[{"name":"cika","id":"cika","seed":3,"round":1},{"name":"doni","id":"doni","seed":4,"round":1}],[{"name":"Azzam","id":"azzam","seed":1,"round":2},{"name":"doni","id":"doni","seed":4,"round":2}]]];
+        var datahehe = {!! $result !!}
 
         $(".tournament").gracket({
             src: myData
@@ -64,7 +64,7 @@
 
         $(".tournament_1").gracket({
             src: datahehe
-        });
+        })
     </script>
 </body>
 

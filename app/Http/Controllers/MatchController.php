@@ -18,34 +18,81 @@ class MatchController extends Controller
         $round = 1;
         for ($j = $round; $j <= $rounds; $j = $j + 1) {
             $matches = Match::where('round', $j)->get();
-            // $result[] = $matches;
-            for ($i = 0; $i < count($matches); $i = $i + 2) {
+            // $result[] = count($matches);
+            if (count($matches) > 1) {
+                if (count($matches) % 2 == 0) {
+                    for ($i = 0; $i < count($matches); $i = $i + 2) {
+                        $round_array[] =
+                            // per round
+                            [
+                                [
+                                    "name"  =>   $matches[$i]->name,
+                                    "id"    =>   $matches[$i]->id_name,
+                                    "seed"  =>   $matches[$i]->seed,
+                                    "round" =>   $matches[$i]->round
+                                ],
+                                [
+                                    "name"  =>   $matches[$i + 1]->name,
+                                    "id"    =>   $matches[$i + 1]->id_name,
+                                    "seed"  =>   $matches[$i + 1]->seed,
+                                    "round" =>   $matches[$i + 1]->round
+                                ],
+                            ];
+                    }
+                } else {
+                    $wk = 0;
+                    for ($i = 0; $i < count($matches)-1; $i = $i + 2) {
+                        $round_array[] =
+                            // per round
+                            [
+                                [
+                                    "name"  =>   $matches[$i]->name,
+                                    "id"    =>   $matches[$i]->id_name,
+                                    "seed"  =>   $matches[$i]->seed,
+                                    "round" =>   $matches[$i]->round
+                                ],
+                                [
+                                    "name"  =>   $matches[$i + 1]->name,
+                                    "id"    =>   $matches[$i + 1]->id_name,
+                                    "seed"  =>   $matches[$i + 1]->seed,
+                                    "round" =>   $matches[$i + 1]->round
+                                ],
+                            ];
+                            
+                        $wk = $wk+2;
+                    }
+                    // return $round_array;
+                    $round_array[] =
+                        // per round
+                        [
+                            [
+                                "name"  =>   $matches[$wk]->name,
+                                "id"    =>   $matches[$wk]->id_name,
+                                "seed"  =>   $matches[$wk]->seed,
+                                "round" =>   $matches[$wk]->round
+                            ]
+                        ];
+                    // return $round_array;
+                }
+            } else {
                 $round_array[] =
                     // per round
                     [
                         [
-                            "name"  =>   $matches[$i]->name,
-                            "id"    =>   $matches[$i]->id_name,
-                            "seed"  =>   $matches[$i]->seed,
-                            "round" =>   $matches[$i]->round
-                        ],
-                        [
-                            "name"  =>   $matches[$i + 1]->name,
-                            "id"    =>   $matches[$i + 1]->id_name,
-                            "seed"  =>   $matches[$i + 1]->seed,
-                            "round" =>   $matches[$i + 1]->round
-                        ],
+                            "name"  =>   $matches[0]->name,
+                            "id"    =>   $matches[0]->id_name,
+                            "seed"  =>   $matches[0]->seed,
+                            "round" =>   $matches[0]->round
+                        ]
                     ];
             }
             $result[] = $round_array;
+            $round_array = [];
         }
 
-        // $result[] = [
-        //     "name"  =>   $match->name,
-        //     "id"    =>   $match->id_name,
-        //     "seed"  =>   $match->seed,
-        // ];
+        // $result = "wkwk";
 
-        return $result;
+        // return $result;
+        return view('match')->with('result', json_encode($result));
     }
 }
