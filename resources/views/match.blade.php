@@ -22,24 +22,48 @@
             [
                 // match 1
                 [{
+                    "name": "Erik Zettersten",
+                    "id": "erik-zettersten",
+                    "seed": 1,
+                    "displaySeed": "D1",
+                    "score": 47
+                }, {
+                    "name": "Andrew Miller",
+                    "id": "andrew-miller",
+                    "seed": 2
+                }],
+                // match 2
+                [{
                     "name": "James Coutry",
                     "id": "james-coutry",
-                    "seed": 0
+                    "seed": 3
                 }, {
                     "name": "Sam Merrill",
                     "id": "sam-merrill",
-                    "seed": 0
+                    "seed": 4
                 }],
-                // match 2
+            ],
+            [
+                [{
+                    "name": "Erik Zettersten",
+                    "id": "erik-zettersten",
+                    "seed": 1
+                }, {
+                    "name": "James Coutry",
+                    "id": "james-coutry",
+                    "seed": 3
+                }],
             ]
         ];
+
+        datahehe = [[[{"name":"Azzam Jihad Ulhaq","id":"azzam","seed":1,"round":1},{"name":"budi","id":"budi","seed":2,"round":1}],[{"name":"cika","id":"cika","seed":3,"round":1},{"name":"doni","id":"doni","seed":4,"round":1}]],[[{"name":"Azzam Jihad Ulhaq","id":"azzam","seed":1,"round":1},{"name":"budi","id":"budi","seed":2,"round":1}],[{"name":"cika","id":"cika","seed":3,"round":1},{"name":"doni","id":"doni","seed":4,"round":1}],[{"name":"Azzam","id":"azzam","seed":1,"round":2},{"name":"doni","id":"doni","seed":4,"round":2}]]];
 
         $(".tournament").gracket({
             src: myData
         });
 
         $(".tournament_1").gracket({
-            src: myData
+            src: datahehe
         });
     </script>
 </body>
