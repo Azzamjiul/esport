@@ -19,7 +19,7 @@
                         <td>{{$match->team_id1->name}} vs {{$match->team_id2->name}}</td>
                         <td>{{$match->win->name}}</td>
                         <td>{{$match->match_start}} - {{$match->match_end}}</td>
-                        <td><a class="btn btn-outline-primary" href="{{route('detail', $match->id)}}">Detail</a></td>
+                        <td><a class="btn btn-outline-primary" href="{{route('match_detail', $match->id)}}">Detail</a></td>
                     </tr>
                     @endforeach
                 </tbody>

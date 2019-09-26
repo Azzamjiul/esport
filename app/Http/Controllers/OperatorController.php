@@ -21,6 +21,12 @@ class OperatorController extends Controller
         return view('operator.match', $data);
     }
 
+    public function teams()
+    {
+        $data['teams'] = User::all();
+        return view('operator.team_index', $data);
+    }
+
     public function match_detail($id)
     {
         $data['match'] = Match::find($id);
