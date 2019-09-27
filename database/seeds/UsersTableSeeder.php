@@ -28,8 +28,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        insertUsers('operator1', 'operator1@mail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
-        insertUsers('operator2', 'operator2@mail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
-        insertUsers('operator3', 'operator3@mail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
+        insertUsers('operator', 'operator@mail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
     }
 }

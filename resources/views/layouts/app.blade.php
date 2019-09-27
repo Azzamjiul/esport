@@ -54,11 +54,11 @@
                         @if(Auth::user()->type == 2)
                         <li>
                             <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
-                            href="{{route('matchs')}}">Pertandingan</a>
+                            href="{{route('operator.matchs')}}">Pertandingan</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
-                            href="{{route('teams')}}">Team</a>
+                            href="{{route('operator.teams')}}">Team</a>
                         </li>
                         @endif
                         <li class="nav-item dropdown">
@@ -67,9 +67,15 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                @if(Auth::user()->type == 0)
                                 <a class="dropdown-item" href="{{ route('home') }}">
                                     {{ __('Dashboard') }}
                                 </a>
+                                @else
+                                <a class="dropdown-item" href="{{ route('operator.dashboard') }}">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

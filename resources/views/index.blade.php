@@ -123,10 +123,15 @@
 															Halo, {{ Auth::user()->name }}
 														</a>
 														<ul class="dropdown-menu">
+															
+															@if(Auth::user()->type == 0)
 															<li><a class="dropdown-item" href="{{ route('home') }}">Dashboard</a></li>
+															@else
+															<li><a class="dropdown-item" href="{{ route('operator.dashboard') }}">Dashboard</a></li>
+															@endif
 															<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-															Logout
-															</a></li>
+																	Logout
+																</a></li>
 
 															<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 																@csrf

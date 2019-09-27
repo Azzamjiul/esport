@@ -21,8 +21,18 @@
                         <td>{{$i++}}</td>
                         <td>{{$team->name}}</td>
                         <td>{{$team->email}}</td>
-                        <td>{{$team->registration_status}}</td>
-                        <td><a class="btn btn-outline-primary" href="{{route('team_detail', $team->id)}}">Detail</a></td>
+                        <td>
+                            @if($team->registration_status == 0)
+                            <p class="badge badge-danger">Belum Konfirmasi Pembayaran</p>
+                            @elseif($team->registration_status == 1)
+                            <p class="badge badge-warning">Belum Mengisi Detail Tim</p>
+                            @elseif($team->registration_status == 2)
+                            <p class="badge badge-warning">Belum Konfirmasi Detail Tim</p>
+                            @elseif($team->registration_status == 3)
+                            <p class="badge badge-info">Siap Bertanding</p>
+                            @endif
+                        </td>
+                        <td><a class="btn btn-outline-primary" href="{{route('operator.team_detail', $team->id)}}">Detail</a></td>
                     </tr>
                     @endforeach
                 </tbody>

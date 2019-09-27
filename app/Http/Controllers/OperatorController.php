@@ -21,17 +21,19 @@ class OperatorController extends Controller
         return view('operator.match', $data);
     }
 
-    public function teams()
-    {
-        $data['teams'] = User::where('type', 0)->get();
-        return view('operator.team_index', $data);
-    }
-
     public function match_detail($id)
     {
         $data['match'] = Match::find($id);
         $data['photos'] = Match::find($id)->photo;
         return view('operator.match_detail', $data);
+    }
+
+
+
+    public function teams()
+    {
+        $data['teams'] = User::where('type', 0)->get();
+        return view('operator.team_index', $data);
     }
 
     public function team($id)
@@ -73,5 +75,16 @@ class OperatorController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function verifikasi_tim($id)
+    {
+        // return "wkwk";
+        $team = User::find($id);
+        $team->update([
+            'registration_status' => 3
+        ]);
+        $team->save();
+        return redirect()->route('operator.teams');
     }
 }

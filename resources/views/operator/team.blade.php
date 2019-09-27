@@ -19,11 +19,13 @@
                         @csrf
                         <div class="form-group">
                             <label for="">Bukti Pembayaran</label><br>
-                            <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_bayar/'.$team->bukti_bayar) }}"><a>
+                            <img width="500px" src="{{ url('/bukti_bayar/'.$team->bukti_bayar) }}">
                         </div>
+                        @if($team->bukti_bayar != null)
                         <div>
-                            <button type="submit" class="btn btn-outline-primary">Validasi Pembayaran</button>
+                            <button type="submit" class="btn btn-outline-primary">Validasi Pembayaran {{$team->bukti_bayar}}</button>
                         </div>
+                        @endif
                     </form>
                 </div>
             </div>
@@ -66,7 +68,8 @@
                             <th>Aksi</th>
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
+                            <?php $i = 1;
+                            $semua = 0; ?>
                             @foreach($team_details as $team_detail)
                             <tr>
                                 <td>{{$i++}}</td>
@@ -80,6 +83,7 @@
                                 <td>
                                     @if($team_detail->validation_status)
                                     <h6><span class="badge badge-success">Sudah terverifikasi</span></h6>
+                                    <?php $semua++; ?>
                                     @else
                                     <h6><span class="badge badge-danger">Belum terverifikasi</span></h6>
                                     @endif
@@ -124,6 +128,12 @@
                         <button class="btn btn-md btn-primary" onclick="return confirm('Are you sure?')">Simpan Permanen</button>
                     </form>
                     @else
+                    @if($semua == 7)
+                    <form action="{{route('operator.verifikasi_tim', $team->id)}}" id="validasi_team_detail_form" method="post" style="display:inline">
+                        @csrf
+                        <button class="btn btn-md btn-success" id="validasi_team_detail_button" type="submit">Simpan</button>
+                    </form>
+                    @endif
                     <a href="{{route('home')}}" class="btn btn-md btn-primary">Kembali</a>
                     @endif
                 </div>

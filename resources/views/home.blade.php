@@ -84,12 +84,12 @@
           @endif
 
           <div class="form-group">
-            <label for="">Pilih gambar</label>
+            <label for="">Pilih gambar (Maksimal 1 MB)</label> <br>
             <input type="file" name="image">
             <p class="text-danger">{{ $errors->first('image') }}</p>
           </div>
           <div class="form-group">
-            <button class="btn btn-danger btn-sm">Upload</button>
+            <button type="submit" class="btn btn-danger btn-sm">Upload</button>
           </div>
         </form>
       </div>
