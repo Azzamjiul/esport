@@ -101,12 +101,12 @@ class PesertaController extends Controller
             // masukkan resize image ke canvas
             $canvas->insert($resizeImage, 'center');
 
-            if (!File::isDirectory($this->path_team_detail . '/team_' . Auth::user()->id)) {
-                File::makeDirectory($this->path_team_detail . '/team_' . Auth::user()->id);
-            }
+            // if (!File::isDirectory($this->path_team_detail . '/team_' . Auth::user()->id)) {
+            //     File::makeDirectory($this->path_team_detail . '/team_' . Auth::user()->id);
+            // }
 
             // Upload compressed file
-            $canvas->save($this->path_team_detail . '/team_' . Auth::user()->id . '/' . $fileName);
+            $canvas->save($this->path_team_detail . '/team_' . Auth::user()->id . '_' . $fileName);
         }
 
         if ($team_detail->first()->identity_id == 'noimage.jpg') {
