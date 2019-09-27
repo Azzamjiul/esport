@@ -36,9 +36,6 @@
                     <!-- Left Side Of Navbar -->
                     @guest
                     @else
-                    <ul class="navbar-nav mr-auto">
-                        <!-- <li class="nav-item"><a class="nav-link" href="{{ route('detail_tim.index') }}">Detail Tim</a></li> -->
-                    </ul>
                     @endguest
 
                     <!-- Right Side Of Navbar -->
@@ -54,6 +51,16 @@
                         </li>
                         @endif
                         @else
+                        @if(Auth::user()->type == 2)
+                        <li>
+                            <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
+                            href="{{route('matchs')}}">Pertandingan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
+                            href="{{route('teams')}}">Team</a>
+                        </li>
+                        @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Halo, {{ Auth::user()->name }} <span class="caret"></span>

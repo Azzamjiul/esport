@@ -7,7 +7,8 @@ use App\User;
 
 class Match extends Model
 {
-	protected $table = 'match';
+    // protected $table = 'match';
+    protected $table = 'pertandingan';
 
     protected $fillable = [
         'match_start', 'match_end', 'winner',

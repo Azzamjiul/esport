@@ -1,18 +1,21 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+
+function insertPhotos($name, $fk_match_id, $fk_team_id) {
+    DB::table('photo')->insert([
+        'name' => $name,
+        'fk_match_id' => $fk_match_id,
+        'fk_team_id' => $fk_team_id,
+        'created_at' => Carbon::now('Asia/Jakarta'),
+        'updated_at' => Carbon::now('Asia/Jakarta')
+    ]); 
+}
 
 class PhotoTableSeeder extends Seeder
 {
-    function insertPhotos($name, $fk_match_id, $fk_team_id) {
-        DB::table('photo')->insert([
-            'name' => $name,
-            'fk_match_id' => $fk_match_id,
-            'fk_team_id' => $fk_team_id,
-            'created_at' => Carbon::now('Asia/Jakarta'),
-            'updated_at' => Carbon::now('Asia/Jakarta')
-        ]); 
-    }
     /**
      * Run the database seeds.
      *

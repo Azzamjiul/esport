@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->boolean('registration_status');
             $table->integer('fk_operator_id');
             $table->integer('invoice');
+            $table->string('bukti_bayar')->nullable();
             $table->integer('type');
             $table->string('telp');
             $table->string('password');

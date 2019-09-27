@@ -13,11 +13,12 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/peserta', 'HomeController@index')->name('home');
 
-Route::prefix('home')->group(function () {
-    Route::resource('detail_tim','DetailTimController');
-    Route::post('detail_tim/simpan_permanen', 'DetailTimController@simpan_permanen')->name('detail_tim.simpan_permanen');
+Route::prefix('peserta')->group(function () {
+    Route::resource('peserta','PesertaController');
+    Route::post('peserta/simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('peserta.simpan_tim_permanen');
+    Route::post('pembayaran/upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
 });
 
 Route::get('/', function () {
@@ -28,5 +29,15 @@ Route::get('/operator/dashboard', function () {
 	return view('operator.dashboard');
 });
 
-Route::get('/operator/home', 'OperatorController@index');
-Route::get('/operator/detail/{id}', 'OperatorController@detail')->name('detail');
+Route::get('/operator/match', 'OperatorController@match')->name('matchs');
+Route::get('/operator/match_detail/{id}', 'OperatorController@match_detail')->name('match_detail');
+Route::get('/operator/team/{id}', 'OperatorController@team')->name('team_detail');
+Route::post('/verif/{id}', 'OperatorController@verify')->name('operator.verifikasi_detail_team');;
+Route::post('/validation/{id}', 'OperatorController@validation')->name('operator.validasi_pembayaran');
+Route::get('/operator/team', 'OperatorController@teams')->name('teams');
+
+Route::get('/match_all', function () {
+    return view('match');
+});
+
+Route::get('match','MatchController@index')->name('match.index');

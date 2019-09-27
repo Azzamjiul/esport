@@ -4,6 +4,43 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
+            @if($team->registration_status == 0)
+            <div class="card">
+                <div class="card-header">Validasi Team</div>
+
+                <div class="card-body">
+                    @if (session('message-success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('message-success') }}
+                    </div>
+                    @endif
+
+                    <form action="{{ route('operator.validasi_pembayaran', $team->id) }}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Bukti Pembayaran</label><br>
+                            <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_bayar/'.$team->bukti_bayar) }}"><a>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-outline-primary">Validasi Pembayaran</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @elseif($team->registration_status == 1)
+            <div class="card">
+                <div class="card-header">Validasi Team</div>
+
+                <div class="card-body">
+                    @if (session('message-success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('message-success') }}
+                    </div>
+                    @endif
+                    <p class="lead">Akun telah diverifikasi. Silahkan tunggu akun menyimpan permanen detail tim.</p>
+                </div>
+            </div>
+            @elseif($team->registration_status == 2)
             <div class="card">
                 <div class="card-header">Detail Tim</div>
 
@@ -26,6 +63,7 @@
                             @else
                             <th>Status</th>
                             @endif
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                             <?php $i = 1; ?>
@@ -47,6 +85,14 @@
                                     @endif
                                 </td>
                                 @endif
+                                <td>
+                                    @if($team_detail->validation_status == 0)
+                                    <form action="{{ route('operator.verifikasi_detail_team', $team_detail->id) }}" method="post">
+                                        @csrf
+                                        <button class="btn btn-sm btn-success">Verifikasi</button>
+                                    </form>
+                                    @endif
+                                </td>
                             </tr>
                             <div class="modal fade" id="modal_{{$team_detail->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -59,7 +105,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="card" style="width: 18rem;">
-                                                <?php $image = 'team_' . Auth::user()->id . '_' . $team_detail->identity_card ?>
+                                                <?php $image = 'team_' . $team->id . '/' . $team_detail->identity_card ?>
                                                 <img src="{{ asset('team_detail') }}/{{$image}}" class="card-img-top" alt="">
                                             </div>
                                             <div class="modal-footer">
@@ -82,6 +128,7 @@
                     @endif
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
