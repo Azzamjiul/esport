@@ -5,20 +5,6 @@ use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
-    function insertUsers($user, $email, $regis, $op_id, $invoice, $type, $telp, $pass) {
-        DB::table('users')->insert([
-            'name' => $user,
-            'email' => $email,
-            'registration_status' => $regis,
-            'fk_operator_id' => $op_id,
-            'invoice' => $invoice,
-            '$type' => $type,
-            'telp' => $telp,
-            'password' => Hash::make($pass),
-            'created_at' => Carbon::now('Asia/Jakarta'),
-            'updated_at' => Carbon::now('Asia/Jakarta')
-        ]); 
-    }
     /**
      * Run the database seeds.
      *
@@ -26,8 +12,33 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        insertUsers('Op1', 'op1@gmail.com', 1, 1, 100000, 2, '123456789', 'secret');
-        insertUsers('Team1', 'team1@gmail.com', 1, 1, 100001, 0, '123456789', 'secret');
-        insertUsers('Team2', 'team2@gmail.com', 1, 1, 100002, 0, '123456789', 'secret');
+        // insertUsers('operator', 'operator@gmail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
+        DB::table('users')->insert([
+            'name' => 'operator',
+            'email' => 'operator@gmail.com',
+            'registration_status' => 1,
+            'fk_operator_id' => 1,
+            'invoice' => 100000,
+            'type' => 2,
+            'telp' => '082330037232',
+            'password' => Hash::make('adminadmin'),
+            'created_at' => Carbon::now('Asia/Jakarta'),
+            'updated_at' => Carbon::now('Asia/Jakarta')
+        ]); 
+    }
+    
+    public function insertUsers($user, $email, $regis, $op_id, $invoice, $type, $telp, $pass) {
+        DB::table('users')->insert([
+            'name' => $user,
+            'email' => $email,
+            'registration_status' => $regis,
+            'fk_operator_id' => $op_id,
+            'invoice' => $invoice,
+            'type' => $type,
+            'telp' => $telp,
+            'password' => Hash::make($pass),
+            'created_at' => Carbon::now('Asia/Jakarta'),
+            'updated_at' => Carbon::now('Asia/Jakarta')
+        ]); 
     }
 }
