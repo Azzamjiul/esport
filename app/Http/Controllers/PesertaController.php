@@ -35,12 +35,12 @@ class PesertaController extends Controller
     {
         $team = User::where('id', Auth::user()->id)->first();
         if ($team->registration_status == 0) {
-            return redirect()->route('home')->with('message-error', 'Anda harus melakukan konfirmasi pembayaran terlebih dahulu');
+            return redirect()->route('home')->with('message-error', 'Kamu harus melakukan konfirmasi pembayaran terlebih dahulu');
         } else if ($team->registration_status < 3) {
             $team_details = Team_Detail::where('fk_team_id', Auth::user()->id)->get();
             return view('peserta.detail_tim.index', compact('team', 'team_details'));
         } else {
-            return redirect()->route('home')->with('message-error', 'anda tidak diizinkan untuk mengakses halaman tersebut');
+            return redirect()->route('home')->with('message-success', 'tim kamu sudah siap bertanding');
         }
     }
 
@@ -64,6 +64,7 @@ class PesertaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // update tim detail
     public function update(Request $request, $id)
     {
         $team_detail = Team_Detail::where('id', $id);
@@ -138,7 +139,7 @@ class PesertaController extends Controller
 
     public function upload_bukti(Request $request)
     {
-        return $request;
+        // return $request;
         $this->validate($request, [
             'image' => 'required|image|mimes:jpg,png,jpeg|max:100000'
         ]);

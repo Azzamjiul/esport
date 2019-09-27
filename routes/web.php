@@ -10,23 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 Route::get('/', function () {
     return view('index');
 });
-
-Auth::routes();
-
 Route::get('/dashboard', 'HomeController@index')->name('home');
 
-Route::prefix('peserta')->name('peserta.')->middleware('peserta')->group(function () {
-    Route::resource('', 'PesertaController');
-    Route::post('simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('simpan_tim_permanen');
-    Route::post('upload_bukti', 'PesertaController@upload_bukti')->name('upload_bukti');
+Route::prefix('peserta')->group(function () {
+    Route::resource('peserta', 'PesertaController');
+    Route::post('simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('peserta.simpan_tim_permanen');
+    Route::post('upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
 });
 
-Route::prefix('operator')->name('operator.')->middleware('operator')->group(function () {
+Route::prefix('operator')->name('operator.')->group(function () {
     // dashboard
-    Route::get('dashboard', function () {return view('operator.dashboard');})->name('dashboard');
+    // Route::get('dashboard', function () {return view('operator.dashboard');})->name('dashboard');
 
     // Match
     Route::get('match', 'OperatorController@match')->name('matchs');
