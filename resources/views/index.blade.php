@@ -78,7 +78,8 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="index.html">
-											<img alt="Porto" width="82" height="40" src="{{ asset('template') }}/img/logo-default-slim-dark.png">
+											<!-- <img alt="Porto" width="82" height="40" src="{{ asset('template') }}/img/logo-default-slim-dark.png"> -->
+											<img alt="Esport" width="auto" height="50" src="{{ asset('desain') }}/logo_esport.png">
 										</a>
 									</div>
 								</div>
@@ -184,7 +185,8 @@
 
 							</li> -->
 							<li class="slide-overlay" data-transition="fade">
-								<img src="{{ asset('template') }}/img/slides/slide-bg-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+								<!-- <img src="{{ asset('template') }}/img/slides/slide-bg-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg"> -->
+								<img src="{{ asset('desain') }}/Web_banner_1920x664_1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
 								<div class="tp-caption" data-x="center" data-hoffset="['-170','-170','-170','-350']" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="1000" data-transform_in="x:[-300%];opacity:0;s:500;" data-transform_idle="opacity:0.2;s:500;"><img src="{{ asset('template') }}/img/slides/slide-title-border.png" alt=""></div>
 
@@ -246,7 +248,11 @@
 						<div class="row mb-5">
 							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
 								<h2 class="font-weight-bold text-color-light mb-2">About</h2>
+								<br><br>
 								<p class="text-color-light opacity-7">Turnamen ESport yang dibuka untuk internal ITS dan umum. Turnamen ini diadakan pertama kali oleh Institut Teknologi Sepuluh Nopember Surabaya dengan tawaran hadiah yang menarik. Pada tahun 2019, cabang Esport yang dilombakan yaitu Game Mobile Legends.</p>
+							</div>
+							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+								<img alt="Esport" width="auto" height="400" src="{{ asset('desain') }}/Maskot.png">
 							</div>
 						</div>
 						<!-- <div class="row mb-lg-4">
@@ -327,12 +333,11 @@
 						<div class="col-lg-9 text-center">
 							<div class="appear-animation" data-appear-animation="fadeInUpShorter">
 								<h2 class="font-weight-bold mb-2">Informations</h2>
-								<!-- <p class="mb-4">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT</p> -->
+								<p class="mb-4">Hal-hal yang perlu diketahui</p>
 							</div>
 							<!-- <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.</p> -->
 						</div>
 					</div>
-					<br><br>
 					<div class="row pb-5 mb-5">
 						<div class="col">
 
@@ -880,11 +885,10 @@
 						<div class="row">
 							<div class="col-md-6">
 
-								<!-- Google Maps - Settings on footer -->
 								<div id="googlemaps" class="google-ma h-100 mb-0" style="min-height: 400px;"></div>
 
 							</div>
-							<div class="col-md-6 p-5 my-5">
+							<!-- <div class="col-md-6 p-5 my-5">
 
 								<div class="px-4">
 									<h2 class="font-weight-bold line-height-1 mb-2">Contact Us</h2>
@@ -925,7 +929,7 @@
 									</form>
 								</div>
 
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</section>
@@ -940,7 +944,7 @@
 									</div>
 									<div class="feature-box-info pl-1">
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">ADDRESS</h5>
-										<p class="text-color-light font-weight-semibold mb-0">MON - FRI: 10:00am - 6:00pm</p>
+										<p class="text-color-light font-weight-semibold mb-0">Coming Soon</p>
 									</div>
 								</div>
 							</div>
@@ -951,7 +955,7 @@
 									</div>
 									<div class="feature-box-info pl-1">
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">CALL US NOW</h5>
-										<a href="tel:+8001234567" class="text-color-light font-weight-semibold text-decoration-none">800-123-4567</a>
+										<a href="tel:0" class="text-color-light font-weight-semibold text-decoration-none">Coming Soon</a>
 									</div>
 								</div>
 							</div>
@@ -965,7 +969,7 @@
 										<p class="mb-0">
 											<span class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" class="text-color-light font-weight-semibold" title="Facebook"><i class="mr-1 fab fa-facebook-f"></i> FACEBOOK</a></span>
 											<span class="social-icons-twitter pl-3"><a href="http://www.twitter.com/" target="_blank" class="text-color-light font-weight-semibold" title="Twitter"><i class="mr-1 fab fa-twitter"></i> TWITTER</a></span>
-											<span class="social-icons-instagram pl-3"><a href="http://www.linkedin.com/" target="_blank" class="text-color-light font-weight-semibold" title="Linkedin"><i class="mr-1 fab fa-instagram"></i> INSTAGRAM</a></span>
+											<span class="social-icons-instagram pl-3"><a href="http://www.instagram.com/esport.its" target="_blank" class="text-color-light font-weight-semibold" title="Instagram"><i class="mr-1 fab fa-instagram"></i> INSTAGRAM</a></span>
 										</p>
 									</div>
 								</div>
@@ -980,7 +984,7 @@
 					<div class="container py-2">
 						<div class="row py-4">
 							<div class="col d-flex align-items-center justify-content-center">
-								<p><strong>PORTO TEMPLATE</strong> - © Copyright 2019. All Rights Reserved.</p>
+								<p><strong>Esport Dies Natalies ITS 59</strong> - © Copyright 2019. All Rights Reserved.</p>
 							</div>
 						</div>
 					</div>
@@ -1049,8 +1053,8 @@
 
 			// Map Markers
 			var mapMarkers = [{
-				address: "New York, NY 10017",
-				html: "<strong>New York Office</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
+				address: "Institut Teknologi Sepuluh Nopember, Surabaya, Indonesia",
+				html: "<strong>New York Office</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: -7.28, longitude: 112.79, zoom: 16}, event)'>[+] zoom here</a>",
 				icon: {
 					image: "img/pin.png",
 					iconsize: [26, 46],
@@ -1059,8 +1063,8 @@
 			}];
 
 			// Map Initial Location
-			var initLatitude = 40.75198;
-			var initLongitude = -73.96978;
+			var initLatitude = -7.28;
+			var initLongitude = 112.79;
 
 			// Map Extended Settings
 			var mapSettings = {
