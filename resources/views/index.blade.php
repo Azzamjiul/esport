@@ -157,7 +157,7 @@
 				<div class="slider-container rev_slider_wrapper" style="height: 100vh;">
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': 1140, 'gridheight': 800, 'responsiveLevels': [4096,1200,992,500]}">
 						<ul>
-							<li class="slide-overlay" data-transition="fade">
+							<!-- <li class="slide-overlay" data-transition="fade">
 								<img src="{{ asset('template') }}/img/slides/slide-one-page-1-1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
 								<div class="tp-caption tp-resizeme" data-frames='[{"delay":1500,"speed":2000,"frame":"0","from":"opacity:0;x:-100%;y:-100%;","to":"o:1;x:0;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-type="image" data-x="left" data-hoffset="['0','-150','-200','-200']" data-y="top" data-voffset="['-100','-150','-200','-200']" data-width="['auto']" data-height="['auto']" data-basealign="slide"><img src="{{ asset('template') }}/img/slides/slide-one-page-1-2.jpg" alt=""></div>
@@ -182,22 +182,22 @@
 
 								<a class="tp-caption btn btn-primary btn-rounded font-weight-semibold" data-frames='[{"delay":2500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-hash data-hash-offset="85" href="#projects" data-x="center" data-hoffset="0" data-y="center" data-voffset="['133','133','133','255']" data-whitespace="nowrap" data-fontsize="['14','14','14','33']" data-paddingtop="['15','15','15','40']" data-paddingright="['45','45','45','110']" data-paddingbottom="['15','15','15','40']" data-paddingleft="['45','45','45','110']">GET STARTED NOW!</a>
 
-							</li>
+							</li> -->
 							<li class="slide-overlay" data-transition="fade">
 								<img src="{{ asset('template') }}/img/slides/slide-bg-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
 								<div class="tp-caption" data-x="center" data-hoffset="['-170','-170','-170','-350']" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="1000" data-transform_in="x:[-300%];opacity:0;s:500;" data-transform_idle="opacity:0.2;s:500;"><img src="{{ asset('template') }}/img/slides/slide-title-border.png" alt=""></div>
 
-								<div class="tp-caption text-color-light font-weight-normal" data-x="center" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="700" data-fontsize="['16','16','16','40']" data-lineheight="['25','25','25','45']" data-transform_in="y:[-50%];opacity:0;s:500;">WE WORK HARD AND PORTO HAS</div>
+								<div class="tp-caption text-color-light font-weight-normal" data-x="center" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="700" data-fontsize="['16','16','16','40']" data-lineheight="['25','25','25','45']" data-transform_in="y:[-50%];opacity:0;s:500;">E SPORT DIESNATALIS 59 ITS</div>
 
 								<div class="tp-caption" data-x="center" data-hoffset="['170','170','170','350']" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="1000" data-transform_in="x:[300%];opacity:0;s:500;" data-transform_idle="opacity:0.2;s:500;"><img src="{{ asset('template') }}/img/slides/slide-title-border.png" alt=""></div>
 
-								<div class="tp-caption font-weight-extra-bold text-color-light negative-ls-1" data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="center" data-fontsize="['50','50','50','90']" data-lineheight="['55','55','55','95']">THE BEST DESIGN</div>
+								<div class="tp-caption font-weight-extra-bold text-color-light negative-ls-1" data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="center" data-fontsize="['50','50','50','90']" data-lineheight="['55','55','55','95']">Mobile Legends : Bang Bang</div>
 
-								<div class="tp-caption font-weight-light ws-normal text-center" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-x="center" data-y="center" data-voffset="['60','60','60','105']" data-width="['530','530','530','1100']" data-fontsize="['18','18','18','40']" data-lineheight="['26','26','26','45']" style="color: #b5b5b5;">Trusted by over <strong class="text-color-light">30,000</strong> satisfied users, Porto is a huge success in the one of largest world's MarketPlace.</div>
+								<div class="tp-caption font-weight-light ws-normal text-center" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-x="center" data-y="center" data-voffset="['60','60','60','105']" data-width="['530','530','530','1100']" data-fontsize="['18','18','18','40']" data-lineheight="['26','26','26','45']" style="color: #b5b5b5;">Turnamen yang dibuka untuk internal <strong class="text-color-light">ITS</strong> dan <strong class="text-color-light">umum</strong></div>
 
 							</li>
-							<li class="slide-overlay slide-overlay-dark" data-transition="fade">
+							<!-- <li class="slide-overlay slide-overlay-dark" data-transition="fade">
 								<img src="{{ asset('template') }}/img/slides/slide-bg-6.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
 								<div class="tp-caption" data-x="center" data-hoffset="['-145','-145','-145','-320']" data-y="center" data-voffset="['-80','-80','-80','-130']" data-start="1000" data-transform_in="x:[-300%];opacity:0;s:500;" data-transform_idle="opacity:0.2;s:500;"><img src="{{ asset('template') }}/img/slides/slide-title-border.png" alt=""></div>
@@ -236,7 +236,7 @@
 								<div class="tp-caption font-weight-light ws-normal text-center" data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]' data-x="center" data-y="center" data-voffset="['60','60','60','105']" data-width="['530','530','530','1100']" data-fontsize="['18','18','18','40']" data-lineheight="['26','26','26','45']" style="color: #b5b5b5; z-index: 5;">Trusted by over <strong class="text-color-light">30,000</strong> satisfied users, Porto is a huge success in the one of largest world's MarketPlace.</div>
 
 								<div class="tp-dottedoverlay tp-opacity-overlay"></div>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 				</div>
@@ -246,10 +246,10 @@
 						<div class="row mb-5">
 							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
 								<h2 class="font-weight-bold text-color-light mb-2">About</h2>
-								<p class="text-color-light opacity-7">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT</p>
+								<p class="text-color-light opacity-7">Turnamen ESport yang dibuka untuk internal ITS dan umum. Turnamen ini diadakan pertama kali oleh Institut Teknologi Sepuluh Nopember Surabaya dengan tawaran hadiah yang menarik. Pada tahun 2019, cabang Esport yang dilombakan yaitu Game Mobile Legends.</p>
 							</div>
 						</div>
-						<div class="row mb-lg-4">
+						<!-- <div class="row mb-lg-4">
 							<div class="col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
 								<div class="feature-box feature-box-style-2">
 									<div class="feature-box-icon">
@@ -318,7 +318,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</section>
 
@@ -327,16 +327,17 @@
 						<div class="col-lg-9 text-center">
 							<div class="appear-animation" data-appear-animation="fadeInUpShorter">
 								<h2 class="font-weight-bold mb-2">Informations</h2>
-								<p class="mb-4">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT</p>
+								<!-- <p class="mb-4">LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT</p> -->
 							</div>
-							<p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.</p>
+							<!-- <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.</p> -->
 						</div>
 					</div>
+					<br><br>
 					<div class="row pb-5 mb-5">
 						<div class="col">
 
 							<div class="appear-animation popup-gallery-ajax" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-								<div class="owl-carousel owl-theme mb-0" data-plugin-options="{'items': 4, 'margin': 35, 'loop': false}">
+								<div class="owl-carousel owl-theme mb-0" data-plugin-options="{'items': 3, 'margin': 35, 'loop': false}">
 
 
 									<div class="portfolio-item">
@@ -391,149 +392,13 @@
 									</div>
 
 									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-3.html" data-ajax-on-modal>
+										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-2.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-27.jpg" class="img-fluid border-radius-0" alt="">
+													<img src="{{ asset('template') }}/img/projects/project-2.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Porto Screens</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-4.html" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-4.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Three Bottles</span>
+														<span class="thumb-info-inner">Identity</span>
 														<span class="thumb-info-type">Logo</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-5.html" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-5.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Company T-Shirt</span>
-														<span class="thumb-info-type">Brand</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-6.html" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-6.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Mobile Mockup</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-7.html" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-7.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Porto Label</span>
-														<span class="thumb-info-type">Media</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-23.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Business Folders</span>
-														<span class="thumb-info-type">Logo</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-24.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Tablet Screen</span>
-														<span class="thumb-info-type">Website</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-25.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Black Watch</span>
-														<span class="thumb-info-type">Media</span>
-													</span>
-													<span class="thumb-info-action">
-														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
-													</span>
-												</span>
-											</span>
-										</a>
-									</div>
-
-									<div class="portfolio-item">
-										<a href="" data-ajax-on-modal>
-											<span class="thumb-info thumb-info-lighten">
-												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-26.jpg" class="img-fluid border-radius-0" alt="">
-													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Monitor Mockup</span>
-														<span class="thumb-info-type">Website</span>
 													</span>
 													<span class="thumb-info-action">
 														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
@@ -959,12 +824,12 @@
 
 				<div id="faq" class="container">
 					<div class="row justify-content-center pt-5 mt-5">
-						<div class="col-lg-9 text-center">
+						<div class="col-md-6 text-center">
 							<div class="appear-animation" data-appear-animation="fadeInUpShorter">
 								<h2 class="font-weight-bold mb-2">FAQ</h2>
 								<p class="mb-4">FREQUENTLY ASKED QUESTIONS</p>
 							</div>
-							<p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.</p>
+							<!-- <p class="pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo. vamus suscipit molestie vestibulum.</p> -->
 						</div>
 					</div>
 
@@ -972,18 +837,38 @@
 						<div class="col">
 							<div class="toggle toggle-primary" data-plugin-toggle="">
 								<section class="toggle">
-									<label>Curabitur eget leo at velit imperdiet vague iaculis vitaes?</label>
-									<p style="height: 0px;" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor, orci eros pellentesque odio, nec pellentesque erat ligula nec massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.</p>
+									<label>Bagaimana cara mengupload hasil kemenangan?</label>
+									<p style="height: 0px;" class="">Setiap tim wajib mengirim bukti dalam bentuk screenshoot yang harus dikirim ke website</p>
 								</section>
 
 								<section class="toggle">
-									<label>Curabitur eget leo at velit imperdiet viaculis vitaes?</label>
-									<p style="height: 0px;" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.</p>
+									<label>Apakah jadwal pertandingan online dapat dirubah?</label>
+									<p style="height: 0px;" class="">Ya, sangat boleh. Dengan catatan bahwa perubahan ini telah disetujui oleh kedua tim yang bertanding dan jadwal perubahan harus di hari itu juga.</p>
 								</section>
 
 								<section class="toggle">
-									<label>Curabitur eget leo at velit imperdiet varius iaculis vitaes?</label>
-									<p style="height: 0px;" class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Nullam tortor nunc, bibendum vitae semper a, volutpat eget massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fringilla, orci sit amet posuere auctor, orci eros pellentesque odio, nec pellentesque erat ligula nec massa. Aenean consequat lorem ut felis ullamcorper posuere gravida tellus faucibus. Maecenas dolor elit, pulvinar eu vehicula eu, consequat et lacus. Duis et purus ipsum. In auctor mattis ipsum id molestie. Donec risus nulla, fringilla a rhoncus vitae, semper a massa. Vivamus ullamcorper, enim sit amet consequat laoreet, tortor tortor dictum urna, ut egestas urna ipsum nec libero. Nulla justo leo, molestie vel tempor nec, egestas at massa. Aenean pulvinar, felis porttitor iaculis pulvinar, odio orci sodales odio, ac pulvinar felis quam sit.</p>
+									<label>Apakah terdapat batasan umur?</label>
+									<p style="height: 0px;" class=""> Tentu tidak, perlombaan ini dapat diikuti oleh semua kalangan umur.</p>
+								</section>
+
+								<section class="toggle">
+									<label>Bagaimana cara melakukan pembayaran?</label>
+									<p style="height: 0px;" class="">Transfer uang sesuai nominal yang tertera pada website ke rekening BRI</p>
+								</section>
+
+								<section class="toggle">
+									<label>Dimanakah pertandingan Online dan Offline dilakukan?</label>
+									<p style="height: 0px;" class="">Pertandingan online dilakukan di tempat masing-masing, sedangkan pertandingan offline akan dilakukan dilingkungan kampus ITS yang telah di tentukan oleh panitia.</p>
+								</section>
+
+								<section class="toggle">
+									<label>Apakah menggunakan koneksi internet sendiri?</label>
+									<p style="height: 0px;" class="">Santuy kami menyediakan koneksi internet.</p>
+								</section>
+
+								<section class="toggle">
+									<label>Apakah bisa mendaftarkan diri dalam 2 tim yang berbeda?</label>
+									<p style="height: 0px;" class=""> Tentu Bisa, tapi hanya 2 ya gaboleh lebih.</p>
 								</section>
 							</div>
 						</div>

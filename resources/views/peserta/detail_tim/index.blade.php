@@ -17,10 +17,10 @@
                     <table class="table" style="text-align:center">
                         <thead>
                             <th>#</th>
-                            <th>ID MLBB</th>
-                            <th>Nick Name</th>
-                            <th>Nama Lengkap</th>
-                            <th>Tanda Pengenal</th>
+                            <th>ID ML</th>
+                            <th>Nickname ML</th>
+                            <th>Nama Pemain</th>
+                            <th>Uploud pengena</th>
                             @if($team->registration_status == 1)
                             <th>Aksi</th>
                             @else
