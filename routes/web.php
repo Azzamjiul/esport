@@ -24,7 +24,7 @@ Route::prefix('peserta')->group(function () {
 
 Route::prefix('operator')->name('operator.')->group(function () {
     // dashboard
-    // Route::get('dashboard', function () {return view('operator.dashboard');})->name('dashboard');
+    Route::get('dashboard', function () {return view('operator.dashboard');})->name('dashboard');
 
     // Match
     Route::get('match', 'OperatorController@match')->name('matchs');
