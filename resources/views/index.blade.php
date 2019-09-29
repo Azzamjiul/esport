@@ -124,7 +124,7 @@
 															Halo, {{ Auth::user()->name }}
 														</a>
 														<ul class="dropdown-menu">
-															
+
 															@if(Auth::user()->type == 0)
 															<li><a class="dropdown-item" href="{{ route('home') }}">Dashboard</a></li>
 															@else
@@ -346,13 +346,13 @@
 
 
 									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project.html" data-ajax-on-modal>
+										<a href="{{ asset('ajax') }}/cara-pendaftaran.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
 													<img src="{{ asset('template') }}/img/projects/project.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Presentation</span>
-														<span class="thumb-info-type">Brand</span>
+														<span class="thumb-info-inner">Cara Pendaftaran</span>
+														<span class="thumb-info-type"></span>
 													</span>
 													<span class="thumb-info-action">
 														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
@@ -363,13 +363,13 @@
 									</div>
 
 									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-1.html" data-ajax-on-modal>
+										<a href="{{ asset('ajax') }}/hadiah.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
 													<span class="owl-carousel owl-theme dots-inside m-0" data-plugin-options="{'items': 1, 'margin': 20, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}"><span><img src="{{ asset('template') }}/img/projects/project-1.jpg" class="img-fluid border-radius-0" alt=""></span><span><img src="{{ asset('template') }}/img/projects/project-1-2.jpg" class="img-fluid border-radius-0" alt=""></span></span>
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Porto Watch</span>
-														<span class="thumb-info-type">Media</span>
+														<span class="thumb-info-inner">Hadiah</span>
+														<span class="thumb-info-type"></span>
 													</span>
 													<span class="thumb-info-action">
 														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
@@ -380,13 +380,13 @@
 									</div>
 
 									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-2.html" data-ajax-on-modal>
+										<a href="{{ asset('ajax') }}/peraturan-internal.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
 													<img src="{{ asset('template') }}/img/projects/project-2.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Identity</span>
-														<span class="thumb-info-type">Logo</span>
+														<span class="thumb-info-inner">Peraturan Internal</span>
+														<span class="thumb-info-type"></span>
 													</span>
 													<span class="thumb-info-action">
 														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
@@ -397,13 +397,13 @@
 									</div>
 
 									<div class="portfolio-item">
-										<a href="{{ asset('template') }}/ajax/portfolio-ajax-project-2.html" data-ajax-on-modal>
+										<a href="{{ asset('ajax') }}/peraturan-eksternal.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
 													<img src="{{ asset('template') }}/img/projects/project-2.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Identity</span>
-														<span class="thumb-info-type">Logo</span>
+														<span class="thumb-info-inner">Peraturan Eksternal</span>
+														<span class="thumb-info-type"></span>
 													</span>
 													<span class="thumb-info-action">
 														<span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
@@ -968,7 +968,7 @@
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">FOLLOW US</h5>
 										<p class="mb-0">
 											<span class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" class="text-color-light font-weight-semibold" title="Facebook"><i class="mr-1 fab fa-facebook-f"></i> FACEBOOK</a></span>
-											<span class="social-icons-twitter pl-3"><a href="http://www.twitter.com/" target="_blank" class="text-color-light font-weight-semibold" title="Twitter"><i class="mr-1 fab fa-twitter"></i> TWITTER</a></span>
+											<span class="social-icons-line pl-3"><a href="http://www.line.com/" target="_blank" class="text-color-light font-weight-semibold" title="line"><i class="mr-1 fab fa-line"></i>Line</a></span>
 											<span class="social-icons-instagram pl-3"><a href="http://www.instagram.com/esport.its" target="_blank" class="text-color-light font-weight-semibold" title="Instagram"><i class="mr-1 fab fa-instagram"></i> INSTAGRAM</a></span>
 										</p>
 									</div>
