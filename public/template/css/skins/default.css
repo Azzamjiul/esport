@@ -16,7 +16,7 @@ a:active {
 
 html .text-color-primary,
 html .text-primary {
-	color: #0088CC !important;
+	color: #903775 !important;
 }
 
 html .text-color-hover-primary:hover,
@@ -1715,11 +1715,11 @@ html .word-rotator.loading-bar-light .word-rotator-words::after {
 }
 
 .process .process-step-circle {
-	border-color: #0088CC;
+	border-color: #903775;
 }
 
 .process .process-step:hover .process-step-circle {
-	background-color: #0088CC;
+	background-color: #903775;
 }
 
 .process .process-step:hover .process-step-circle .process-step-circle-content {
@@ -1727,11 +1727,11 @@ html .word-rotator.loading-bar-light .word-rotator-words::after {
 }
 
 .process-connecting-line .connecting-line {
-	background: #0088CC;
+	background: #903775;
 }
 
 html .rating-primary .filled-stars {
-	color: #0088CC;
+	color: #903775;
 }
 
 html .rating-secondary .filled-stars {
@@ -1755,7 +1755,7 @@ html .rating-light .filled-stars {
 }
 
 html section.section-primary {
-	background-color: #0088CC !important;
+	background-color: #903775 !important;
 	border-color: #0077b3 !important;
 }
 

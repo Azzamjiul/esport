@@ -7,15 +7,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Porto - Responsive HTML5 Template 7.5.0</title>
+	<title>Esport Competition Dies Natalies ITS ke-59</title>
 
-	<meta name="keywords" content="HTML5 Template" />
-	<meta name="description" content="Porto - Responsive HTML5 Template">
+	<meta name="keywords" content="Esport Competition Dies Natalies ITS ke-59, Intitut Teknologi Sepuluh Nopember, Esport, Mobile Legend" />
+	<meta name="description" content="Esport Competition Dies Natalies Intitut Teknologi Sepuluh Nopember ke-59">
 	<meta name="author" content="okler.net">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{ asset('template') }}/img/favicon.ico" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="{{ asset('template') }}/img/apple-touch-icon.png">
+	<link rel="shortcut icon" href="{{ asset('desain') }}/logo_59.png" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{{ asset('desain') }}/logo_59.png">
 
 	<!-- Mobile Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -77,8 +77,7 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="index.html">
-											<!-- <img alt="Porto" width="82" height="40" src="{{ asset('template') }}/img/logo-default-slim-dark.png"> -->
+										<a href="/">
 											<img alt="Esport" width="auto" height="50" src="{{ asset('desain') }}/logo_esport.png">
 										</a>
 									</div>
@@ -418,83 +417,43 @@
 					</div>
 				</div>
 
-				<!-- <section id="rundown" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(img/bg-one-page-1-1.jpg); background-size: cover; background-position: center;">
+				<section id="rundown" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-size: cover; background-position: center;">
 					<div class="container">
 						<div class="row">
-							<div class="col text-center">
-								<h2 class="font-weight-bold text-color-light mb-2">We’re excited about Porto Template</h2>
-								<p class="text-color-light opacity-7">30,000 CUSTOMERS IN 100 COUNTRIES USE PORTO TEMPLATE. MEET OUR CUSTOMERS.</p>
-							</div>
-						</div>
-						<div class="row text-center py-3 my-4">
-							<div class="owl-carousel owl-theme carousel-center-active-item carousel-center-active-item-style-2 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-1.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-2.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-3.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-4.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-5.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-6.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-4.png" alt="">
-								</div>
-								<div>
-									<img class="img-fluid" src="{{ asset('template') }}/img/logos/logo-light-2.png" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-
-								<div class="owl-carousel owl-theme nav-bottom rounded-nav mb-0" data-plugin-options="{'items': 1, 'loop': true, 'autoHeight': true}">
-									<div>
-										<div class="testimonial testimonial-style-2 testimonial-light testimonial-with-quotes testimonial-quotes-primary mb-0">
-											<blockquote>
-												<p class="text-5 line-height-5 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti.</p>
-											</blockquote>
-											<div class="testimonial-author">
-												<p><strong class="font-weight-extra-bold text-2">- John Smith. Okler</strong></p>
-											</div>
-										</div>
-									</div>
-									<div>
-										<div class="testimonial testimonial-style-2 testimonial-light testimonial-with-quotes testimonial-quotes-primary mb-0">
-											<blockquote>
-												<p class="text-5 line-height-5 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti.</p>
-											</blockquote>
-											<div class="testimonial-author">
-												<p><strong class="font-weight-extra-bold text-2">- John Smith. Okler</strong></p>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</section> -->
-
-				<section id="rundown" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(img/bg-one-page-1-1.jpg); background-size: cover; background-position: center;">
-					<div class="container">
-						<div class="row">
-							<div class="col text-center">
+							<div class="col-md-11 text-center">
 								<h2 class="font-weight-bold text-color-light mb-2">Rundown</h2>
 								<p class="text-color-light opacity-7"></p>
 							</div>
 						</div>
-						<div class="row">
-							
+						<div class="row process my-5">
+							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+								<div class="process-step-circle">
+									<strong class="process-step-circle-content">01</strong>
+								</div>
+								<div class="process-step-content">
+									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pendaftaran</h4>
+									<p class="mb-0 text-white-jiul">30 September 2019 - 24 Oktober 2019</p>
+								</div>
+							</div>
+							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" style="animation-delay: 400ms;">
+								<div class="process-step-circle">
+									<strong class="process-step-circle-content">02</strong>
+								</div>
+								<div class="process-step-content">
+									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Technical Meeting</h4>
+									<p class="mb-0 text-white-jiul">25 Oktober 2019</p>
+								</div>
+							</div>
+							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+								<div class="process-step-circle">
+									<strong class="process-step-circle-content">03</strong>
+								</div>
+								<div class="process-step-content">
+									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pelaksanaan</h4>
+									<p class="mb-0 text-white-jiul">Online: 28-31 Oktober 2019</p>
+									<p class="mb-0 text-white-jiul">Offline: 2 November 2019</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -655,7 +614,7 @@
 				<section class="call-to-action with-borders with-button-arrow mb-5">
 					<div class="col-sm-9 col-lg-9">
 						<div class="call-to-action-content">
-							<h3>Pendaftaran akan dibuka sampai  <strong class="font-weight-extra-bold">24 Oktober 2019</strong></h3>
+							<h3>Pendaftaran akan dibuka sampai <strong class="font-weight-extra-bold">21 Oktober 2019</strong></h3>
 							<p class="mb-0"><strong class="font-weight-extra-bold">Segera</strong> Daftarkan Tim kamu !!!</p>
 						</div>
 					</div>
@@ -733,15 +692,15 @@
 		<script src="{{ asset('template') }}/vendor/popper/umd/popper.min.js"></script>
 		<script src="{{ asset('template') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<script src="{{ asset('template') }}/vendor/common/common.min.js"></script>
-		<script src="{{ asset('template') }}/vendor/jquery.validation/jquery.validate.min.js"></script>
-		<script src="{{ asset('template') }}/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-		<script src="{{ asset('template') }}/vendor/jquery.gmap/jquery.gmap.min.js"></script>
-		<script src="{{ asset('template') }}/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
+		<!-- <script src="{{ asset('template') }}/vendor/jquery.validation/jquery.validate.min.js"></script> -->
+		<!-- <script src="{{ asset('template') }}/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script> -->
+		<!-- <script src="{{ asset('template') }}/vendor/jquery.gmap/jquery.gmap.min.js"></script> -->
+		<!-- <script src="{{ asset('template') }}/vendor/jquery.lazyload/jquery.lazyload.min.js"></script> -->
 		<script src="{{ asset('template') }}/vendor/isotope/jquery.isotope.min.js"></script>
 		<script src="{{ asset('template') }}/vendor/owl.carousel/owl.carousel.min.js"></script>
 		<script src="{{ asset('template') }}/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="{{ asset('template') }}/vendor/vide/jquery.vide.min.js"></script>
-		<script src="{{ asset('template') }}/vendor/vivus/vivus.min.js"></script>
+		<!-- <script src="{{ asset('template') }}/vendor/vide/jquery.vide.min.js"></script> -->
+		<!-- <script src="{{ asset('template') }}/vendor/vivus/vivus.min.js"></script> -->
 
 		<!-- Theme Base, Components and Settings -->
 		<script src="{{ asset('template') }}/js/theme.js"></script>
@@ -771,188 +730,6 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
-
-		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-		<script>
-			/*
-			Map Settings
-
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-			// Map Markers
-			var mapMarkers = [{
-				address: "Institut Teknologi Sepuluh Nopember, Surabaya, Indonesia",
-				html: "<strong>New York Office</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: -7.28, longitude: 112.79, zoom: 16}, event)'>[+] zoom here</a>",
-				icon: {
-					image: "img/pin.png",
-					iconsize: [26, 46],
-					iconanchor: [12, 46]
-				}
-			}];
-
-			// Map Initial Location
-			var initLatitude = -7.28;
-			var initLongitude = 112.79;
-
-			// Map Extended Settings
-			var mapSettings = {
-				controls: {
-					draggable: (($.browser.mobile) ? false : true),
-					panControl: true,
-					zoomControl: true,
-					mapTypeControl: true,
-					scaleControl: true,
-					streetViewControl: true,
-					overviewMapControl: true
-				},
-				scrollwheel: false,
-				markers: mapMarkers,
-				latitude: initLatitude,
-				longitude: initLongitude,
-				zoom: 5
-			};
-
-			var map = $('#googlemaps').gMap(mapSettings),
-				mapRef = $('#googlemaps').data('gMap.reference');
-
-			// Map text-center At
-			var mapCenterAt = function(options, e) {
-				e.preventDefault();
-				$('#googlemaps').gMap("centerAt", options);
-			}
-
-			// Styles from https://snazzymaps.com/
-			var styles = [{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#e9e9e9"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "landscape",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f5f5f5"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 17
-				}]
-			}, {
-				"featureType": "road.highway",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 29
-				}, {
-					"weight": 0.2
-				}]
-			}, {
-				"featureType": "road.arterial",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 18
-				}]
-			}, {
-				"featureType": "road.local",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#ffffff"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f5f5f5"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"featureType": "poi.park",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#dedede"
-				}, {
-					"lightness": 21
-				}]
-			}, {
-				"elementType": "labels.text.stroke",
-				"stylers": [{
-					"visibility": "on"
-				}, {
-					"color": "#ffffff"
-				}, {
-					"lightness": 16
-				}]
-			}, {
-				"elementType": "labels.text.fill",
-				"stylers": [{
-					"saturation": 36
-				}, {
-					"color": "#333333"
-				}, {
-					"lightness": 40
-				}]
-			}, {
-				"elementType": "labels.icon",
-				"stylers": [{
-					"visibility": "off"
-				}]
-			}, {
-				"featureType": "transit",
-				"elementType": "geometry",
-				"stylers": [{
-					"color": "#f2f2f2"
-				}, {
-					"lightness": 19
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.fill",
-				"stylers": [{
-					"color": "#fefefe"
-				}, {
-					"lightness": 20
-				}]
-			}, {
-				"featureType": "administrative",
-				"elementType": "geometry.stroke",
-				"stylers": [{
-					"color": "#fefefe"
-				}, {
-					"lightness": 17
-				}, {
-					"weight": 1.2
-				}]
-			}];
-
-			var styledMap = new google.maps.StyledMapType(styles, {
-				name: 'Styled Map'
-			});
-
-			mapRef.mapTypes.set('map_style', styledMap);
-			mapRef.setMapTypeId('map_style');
-		</script>
-
-
-
 	</body>
 
 </html>
