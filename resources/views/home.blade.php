@@ -60,6 +60,39 @@
           </div>
           @endif
           @else
+          <div class="card-deck">
+
+          <!-- Card 1 -->
+          <div class="card">
+          <div class="card-header">Jumlah Pendaftar: </div>
+          <div class="card-body">
+          <p class="card-text">{{$daftar}}.</p>
+          </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+          <div class="card-header">Telah Membayar Dan Belum Terkonfirmasi: </div>
+          <div class="card-body">
+          <p class="card-text">{{$belumconfirm}}.</p>
+          </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card">
+          <div class="card-header">Telah Membayar Dan Terkonfirmasi: </div>
+          <div class="card-body">
+          <p class="card-text">{{$sudahconfirm}}.</p>
+          </div>
+          </div>
+
+          </div>
+          </div>
+            <div>
+              <p></p>
+              <p></p>
+              <p>
+            </div>
           @endif
         </div>
       </div>
