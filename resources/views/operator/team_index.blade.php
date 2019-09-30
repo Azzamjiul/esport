@@ -10,6 +10,7 @@
                         <th>#</th>
                         <th>Nama</th>
                         <th>Email</th>
+                        <th>No WA</th>
                         <th>Status Registrasi</th>
                         <th>Aksi</th>
                     </tr>
@@ -21,6 +22,7 @@
                         <td>{{$i++}}</td>
                         <td>{{$team->name}}</td>
                         <td>{{$team->email}}</td>
+                        <td>{{$team->telp}}</td>
                         <td>
                             @if($team->registration_status == 0)
                             <p class="badge badge-danger">Belum Konfirmasi Pembayaran</p>

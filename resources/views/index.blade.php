@@ -420,15 +420,17 @@
 				<section id="rundown" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-size: cover; background-position: center;">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-11 text-center">
-								<h2 class="font-weight-bold text-color-light mb-2">Rundown</h2>
+							<div class="col-md-12 text-center">
+								<h2 class="font-weight-bold text-color-light mb-2">RUNDOWN</h2>
 								<p class="text-color-light opacity-7"></p>
 							</div>
 						</div>
 						<div class="row process my-5">
 							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
 								<div class="process-step-circle">
-									<strong class="process-step-circle-content">01</strong>
+									<strong class="process-step-circle-content">
+									<a><i class="icon-docs icons"></i></a>
+									</strong>
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pendaftaran</h4>
@@ -437,7 +439,9 @@
 							</div>
 							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" style="animation-delay: 400ms;">
 								<div class="process-step-circle">
-									<strong class="process-step-circle-content">02</strong>
+									<strong class="process-step-circle-content">
+									<a><i class="icon-people icons"></i></a>
+									</strong>
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Technical Meeting</h4>
@@ -446,7 +450,9 @@
 							</div>
 							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
 								<div class="process-step-circle">
-									<strong class="process-step-circle-content">03</strong>
+									<strong class="process-step-circle-content">
+										<a><i class="icon-game-controller icons"></i></a>
+									</strong>
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pelaksanaan</h4>
