@@ -186,7 +186,7 @@
 							</li> -->
 							<li class="slide-overlay" data-transition="fade">
 								<!-- <img src="{{ asset('template') }}/img/slides/slide-bg-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg"> -->
-								<img src="{{ asset('desain') }}/Web_banner_1920x664_1.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+								<img src="{{ asset('desain') }}/HOME_1000x1250.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
 								<div class="tp-caption" data-x="center" data-hoffset="['-170','-170','-170','-350']" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="1000" data-transform_in="x:[-300%];opacity:0;s:500;" data-transform_idle="opacity:0.2;s:500;"><img src="{{ asset('template') }}/img/slides/slide-title-border.png" alt=""></div>
 
@@ -366,7 +366,9 @@
 										<a href="{{ asset('ajax') }}/hadiah.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<span class="owl-carousel owl-theme dots-inside m-0" data-plugin-options="{'items': 1, 'margin': 20, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}"><span><img src="{{ asset('template') }}/img/projects/project-1.jpg" class="img-fluid border-radius-0" alt=""></span><span><img src="{{ asset('template') }}/img/projects/project-1-2.jpg" class="img-fluid border-radius-0" alt=""></span></span>
+													<span class="owl-carousel owl-theme dots-inside m-0" data-plugin-options="{'items': 1, 'margin': 20, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}">
+														<span><img src="{{ asset('desain') }}/HADIAH_1000x1000-09.jpg" class="img-fluid border-radius-0" alt=""></span>
+													</span>
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner">Hadiah</span>
 														<span class="thumb-info-type"></span>
@@ -383,7 +385,7 @@
 										<a href="{{ asset('ajax') }}/peraturan-internal.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-2.jpg" class="img-fluid border-radius-0" alt="">
+													<img src="{{ asset('desain') }}/PERATURAN_1000x1000.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner">Peraturan Internal</span>
 														<span class="thumb-info-type"></span>
@@ -400,7 +402,7 @@
 										<a href="{{ asset('ajax') }}/peraturan-eksternal.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project-2.jpg" class="img-fluid border-radius-0" alt="">
+													<img src="{{ asset('desain') }}/PERATURAN_1000x1000.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner">Peraturan Eksternal</span>
 														<span class="thumb-info-type"></span>
@@ -875,6 +877,16 @@
 									<label>Apakah bisa mendaftarkan diri dalam 2 tim yang berbeda?</label>
 									<p style="height: 0px;" class=""> Tentu Bisa, tapi hanya 2 ya gaboleh lebih.</p>
 								</section>
+
+								<section class="toggle">
+									<label>Apabila saya internal ITS tapi tidak masuk dalam perwakilan fakultas apakah bisa mendaftar?</label>
+									<p style="height: 0px;" class=""> Sangat bisa, dengan mendaftar dibagian eksternal dengan biaya pendaftaran yang sama dengan lainnya</p>
+								</section>
+
+								<section class="toggle">
+									<label>Jika saya termasuk perwakilan fakultas tapi ingin mendaftar eksternal apa diperbolehkan?</label>
+									<p style="height: 0px;" class=""> Tentu, Diperbolehkan kok</p>
+								</section>
 							</div>
 						</div>
 					</div>
@@ -882,13 +894,13 @@
 
 				<section id="contact" class="section bg-color-grey-scale-1 border-0 py-0 m-0">
 					<div class="container-fluid">
-						<div class="row">
+						<!-- <div class="row">
 							<div class="col-md-6">
 
 								<div id="googlemaps" class="google-ma h-100 mb-0" style="min-height: 400px;"></div>
 
 							</div>
-							<!-- <div class="col-md-6 p-5 my-5">
+							<div class="col-md-6 p-5 my-5">
 
 								<div class="px-4">
 									<h2 class="font-weight-bold line-height-1 mb-2">Contact Us</h2>
@@ -929,7 +941,26 @@
 									</form>
 								</div>
 
-							</div> -->
+							</div>
+						</div> -->
+						<div class="row">
+							<div class="col">
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="call-to-action with-borders with-button-arrow mb-5">
+					<div class="col-sm-9 col-lg-9">
+						<div class="call-to-action-content">
+							<h3>Porto is <strong class="font-weight-extra-bold">everything</strong> you need to create a <strong class="font-weight-extra-bold">website!</strong></h3>
+							<p class="mb-0">The <strong class="font-weight-extra-bold">Best</strong> HTML Site Template on ThemeForest</p>
+						</div>
+					</div>
+					<div class="col-sm-3 col-lg-3">
+						<div class="call-to-action-btn">
+							<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987" target="_blank" class="btn btn-modern text-2 btn-primary">Buy Now</a><span class="arrow hlb d-none d-md-block appear-animation animated rotateInUpLeft appear-animation-visible" data-appear-animation="rotateInUpLeft" style="left: 100%; top: -32px; animation-delay: 100ms;"></span>
 						</div>
 					</div>
 				</section>
