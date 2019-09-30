@@ -94,10 +94,6 @@
 														<a data-hash class="dropdown-item dropdown-toggle active" href="#home">
 															Home
 														</a>
-														<ul class="dropdown-menu">
-															<!-- <li><a class="dropdown-item" href="index-classic.html">Default Home</a></li> -->
-															<li><a class="dropdown-item" href="index-one-page.html">One Page Website</a></li>
-														</ul>
 													</li>
 													<li>
 														<a class="dropdown-item" data-hash data-hash-offset="68" href="#about">About</a>
@@ -111,9 +107,9 @@
 													<li>
 														<a class="dropdown-item" data-hash data-hash-offset="68" href="#faq">FAQ</a>
 													</li>
-													<li>
+													<!-- <li>
 														<a class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Contact Us</a>
-													</li>
+													</li> -->
 													@guest
 													<li>
 														<a href="{{route('login')}}" class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Login</a>
@@ -498,246 +494,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col">
-								<div class="tabs">
-									<ul class="nav nav-tabs nav-justified flex-column flex-md-row">
-										<li class="nav-item active">
-											<a class="nav-link active" href="#popular10" data-toggle="tab">Popular</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" href="#recent10" data-toggle="tab">Recent</a>
-										</li>
-									</ul>
-									<div class="tab-content">
-										<div id="popular10" class="tab-pane active">
-											<p>Penyisihan</p>
-											<table class="table table-hover appear-animation animated fadeInUp appear-animation-visible">
-												<thead>
-													<tr>
-														<th>
-															#
-														</th>
-														<th>
-															Waktu
-														</th>
-														<th>
-															Keterangan
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															1
-														</td>
-														<td>
-															Mark
-														</td>
-														<td>
-															Otto
-														</td>
-													</tr>
-													<tr>
-														<td>
-															2
-														</td>
-														<td>
-															Jacob
-														</td>
-														<td>
-															Thornton
-														</td>
-													</tr>
-													<tr>
-														<td>
-															3
-														</td>
-														<td>
-															Larry
-														</td>
-														<td>
-															the Bird
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<div id="recent10" class="tab-pane">
-											<p>Finalis</p>
-											<table class="table table-hover appear-animation animated fadeInUp appear-animation-visible">
-												<thead>
-													<tr>
-														<th>
-															#
-														</th>
-														<th>
-															Waktu
-														</th>
-														<th>
-															Keterangan
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															1
-														</td>
-														<td>
-															hmm
-														</td>
-														<td>
-															hmm
-														</td>
-													</tr>
-													<tr>
-														<td>
-															2
-														</td>
-														<td>
-															wkwkwk
-														</td>
-														<td>
-															wkwkwk
-														</td>
-													</tr>
-													<tr>
-														<td>
-															3
-														</td>
-														<td>
-															heheh
-														</td>
-														<td>
-															hehe
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- <div class="col">
-								<div class="tabs tabs-vertical tabs-left">
-									<ul class="nav nav-tabs nav-justified flex-column flex-md-row">
-										<li class="nav-item active">
-											<a class="nav-link font-weight-bold active" href="#popular11" data-toggle="tab">Penyisihan</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link font-weight-bold" href="#recent11" data-toggle="tab">Final</a>
-										</li>
-									</ul>
-									<div class="tab-content">
-										<div id="popular11" class="tab-pane active">
-											<p>Penyisihan</p>
-											<table class="table table-hover appear-animation animated fadeInUp appear-animation-visible">
-												<thead>
-													<tr>
-														<th>
-															#
-														</th>
-														<th>
-															Waktu
-														</th>
-														<th>
-															Keterangan
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															1
-														</td>
-														<td>
-															Mark
-														</td>
-														<td>
-															Otto
-														</td>
-													</tr>
-													<tr>
-														<td>
-															2
-														</td>
-														<td>
-															Jacob
-														</td>
-														<td>
-															Thornton
-														</td>
-													</tr>
-													<tr>
-														<td>
-															3
-														</td>
-														<td>
-															Larry
-														</td>
-														<td>
-															the Bird
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-										<div id="recent11" class="tab-pane">
-											<p>Final</p>
-											<table class="table table-hover appear-animation animated fadeInUp appear-animation-visible">
-												<thead>
-													<tr>
-														<th>
-															#
-														</th>
-														<th>
-															Waktu
-														</th>
-														<th>
-															Keterangan
-														</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															1
-														</td>
-														<td>
-															hmm
-														</td>
-														<td>
-															hmm
-														</td>
-													</tr>
-													<tr>
-														<td>
-															2
-														</td>
-														<td>
-															wkwk
-														</td>
-														<td>
-															wkwk
-														</td>
-													</tr>
-													<tr>
-														<td>
-															3
-														</td>
-														<td>
-															hoho
-														</td>
-														<td>
-															hoho
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div> -->
+							
 						</div>
 					</div>
 				</section>
@@ -841,7 +598,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col">
+						<div class="col-md-6">
 							<div class="toggle toggle-primary" data-plugin-toggle="">
 								<section class="toggle">
 									<label>Bagaimana cara mengupload hasil kemenangan?</label>
@@ -854,15 +611,18 @@
 								</section>
 
 								<section class="toggle">
-									<label>Apakah terdapat batasan umur?</label>
-									<p style="height: 0px;" class=""> Tentu tidak, perlombaan ini dapat diikuti oleh semua kalangan umur.</p>
+									<label>Apabila saya internal ITS tapi tidak masuk dalam perwakilan fakultas apakah bisa mendaftar?</label>
+									<p style="height: 0px;" class=""> Sangat bisa, dengan mendaftar dibagian eksternal dengan biaya pendaftaran yang sama dengan lainnya</p>
 								</section>
 
 								<section class="toggle">
-									<label>Bagaimana cara melakukan pembayaran?</label>
-									<p style="height: 0px;" class="">Transfer uang sesuai nominal yang tertera pada website ke rekening BRI</p>
+									<label>Jika saya termasuk perwakilan fakultas tapi ingin mendaftar eksternal apa diperbolehkan?</label>
+									<p style="height: 0px;" class=""> Tentu, Diperbolehkan kok</p>
 								</section>
-
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="toggle toggle-primary" data-plugin-toggle="">
 								<section class="toggle">
 									<label>Dimanakah pertandingan Online dan Offline dilakukan?</label>
 									<p style="height: 0px;" class="">Pertandingan online dilakukan di tempat masing-masing, sedangkan pertandingan offline akan dilakukan dilingkungan kampus ITS yang telah di tentukan oleh panitia.</p>
@@ -879,88 +639,29 @@
 								</section>
 
 								<section class="toggle">
-									<label>Apabila saya internal ITS tapi tidak masuk dalam perwakilan fakultas apakah bisa mendaftar?</label>
-									<p style="height: 0px;" class=""> Sangat bisa, dengan mendaftar dibagian eksternal dengan biaya pendaftaran yang sama dengan lainnya</p>
+									<label>Apakah terdapat batasan umur?</label>
+									<p style="height: 0px;" class=""> Tentu tidak, perlombaan ini dapat diikuti oleh semua kalangan umur.</p>
 								</section>
 
 								<section class="toggle">
-									<label>Jika saya termasuk perwakilan fakultas tapi ingin mendaftar eksternal apa diperbolehkan?</label>
-									<p style="height: 0px;" class=""> Tentu, Diperbolehkan kok</p>
+									<label>Bagaimana cara melakukan pembayaran?</label>
+									<p style="height: 0px;" class="">Transfer uang sesuai nominal yang tertera pada website ke rekening BRI</p>
 								</section>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<section id="contact" class="section bg-color-grey-scale-1 border-0 py-0 m-0">
-					<div class="container-fluid">
-						<!-- <div class="row">
-							<div class="col-md-6">
-
-								<div id="googlemaps" class="google-ma h-100 mb-0" style="min-height: 400px;"></div>
-
-							</div>
-							<div class="col-md-6 p-5 my-5">
-
-								<div class="px-4">
-									<h2 class="font-weight-bold line-height-1 mb-2">Contact Us</h2>
-									<p class="text-3 mb-4">LOREM IPSUM DOLOR SIT A MET</p>
-									<form id="contactForm" class="contact-form form-style-2 pr-xl-5" action="php/contact-form.php" method="POST">
-										<div class="contact-form-success alert alert-success d-none mt-4" id="contactSuccess">
-											<strong>Success!</strong> Your message has been sent to us.
-										</div>
-
-										<div class="contact-form-error alert alert-danger d-none mt-4" id="contactError">
-											<strong>Error!</strong> There was an error sending your message.
-											<span class="mail-error-message text-1 d-block" id="mailErrorMessage"></span>
-										</div>
-
-										<div class="form-row">
-											<div class="form-group col-xl-4">
-												<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name" placeholder="Name" required>
-											</div>
-											<div class="form-group col-xl-8">
-												<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email" placeholder="Email" required>
-											</div>
-										</div>
-										<div class="form-row">
-											<div class="form-group col">
-												<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-											</div>
-										</div>
-										<div class="form-row">
-											<div class="form-group col">
-												<textarea maxlength="5000" data-msg-required="Please enter your message." rows="4" class="form-control" name="message" id="message" placeholder="Message" required></textarea>
-											</div>
-										</div>
-										<div class="form-row">
-											<div class="form-group col">
-												<input type="submit" value="SUBMIT" class="btn btn-primary btn-rounded font-weight-semibold px-5 btn-py-2 text-2" data-loading-text="Loading...">
-											</div>
-										</div>
-									</form>
-								</div>
-
-							</div>
-						</div> -->
-						<div class="row">
-							<div class="col">
-
-							</div>
-						</div>
-					</div>
-				</section>
-
 				<section class="call-to-action with-borders with-button-arrow mb-5">
 					<div class="col-sm-9 col-lg-9">
 						<div class="call-to-action-content">
-							<h3>Porto is <strong class="font-weight-extra-bold">everything</strong> you need to create a <strong class="font-weight-extra-bold">website!</strong></h3>
-							<p class="mb-0">The <strong class="font-weight-extra-bold">Best</strong> HTML Site Template on ThemeForest</p>
+							<h3>Pendaftaran akan dibuka sampai  <strong class="font-weight-extra-bold">24 Oktober 2019</strong></h3>
+							<p class="mb-0"><strong class="font-weight-extra-bold">Segera</strong> Daftarkan Tim kamu !!!</p>
 						</div>
 					</div>
 					<div class="col-sm-3 col-lg-3">
 						<div class="call-to-action-btn">
-							<a href="http://themeforest.net/item/porto-responsive-html5-template/4106987" target="_blank" class="btn btn-modern text-2 btn-primary">Buy Now</a><span class="arrow hlb d-none d-md-block appear-animation animated rotateInUpLeft appear-animation-visible" data-appear-animation="rotateInUpLeft" style="left: 100%; top: -32px; animation-delay: 100ms;"></span>
+							<a href="{{route('register')}}" target="_blank" class="btn btn-modern text-2 btn-primary">Daftar Sekarang</a><span class="arrow hlb d-none d-md-block appear-animation animated rotateInUpLeft appear-animation-visible" data-appear-animation="rotateInUpLeft" style="left: 100%; top: -32px; animation-delay: 100ms;"></span>
 						</div>
 					</div>
 				</section>
@@ -998,8 +699,8 @@
 									<div class="feature-box-info pl-1">
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">FOLLOW US</h5>
 										<p class="mb-0">
-											<span class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" class="text-color-light font-weight-semibold" title="Facebook"><i class="mr-1 fab fa-facebook-f"></i> FACEBOOK</a></span>
-											<span class="social-icons-line pl-3"><a href="http://www.line.com/" target="_blank" class="text-color-light font-weight-semibold" title="line"><i class="mr-1 fab fa-line"></i>Line</a></span>
+											<!-- <span class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" class="text-color-light font-weight-semibold" title="Facebook"><i class="mr-1 fab fa-facebook-f"></i> FACEBOOK</a></span> -->
+											<span class="social-icons-line pl-3"><a href="http://nav.cx/2Qekp9B" target="_blank" class="text-color-light font-weight-semibold" title="line"><i class="mr-1 fab fa-line"></i>Line</a></span>
 											<span class="social-icons-instagram pl-3"><a href="http://www.instagram.com/esport.its" target="_blank" class="text-color-light font-weight-semibold" title="Instagram"><i class="mr-1 fab fa-instagram"></i> INSTAGRAM</a></span>
 										</p>
 									</div>

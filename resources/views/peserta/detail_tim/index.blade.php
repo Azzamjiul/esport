@@ -58,9 +58,13 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="card" style="width: 18rem;">
-                                                <?php $image = 'team_' . Auth::user()->id . '_' . $team_detail->identity_card ?>
+                                            <div class="card" style="width: 100%;">
+                                            @if($team_detail->identity_card != 'noimage.jpg')
+                                                <?php $image = 'team_' . Auth::user()->id . '/' . $team_detail->identity_card ?>
                                                 <img src="{{ asset('team_detail') }}/{{$image}}" class="card-img-top" alt="">
+                                            @else
+                                                <h2 class="badge badge-danger">tidak ada gambar</h2>
+                                            @endif
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
