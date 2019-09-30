@@ -181,7 +181,7 @@
 							</li> -->
 							<li class="slide-overlay" data-transition="fade">
 								<!-- <img src="{{ asset('template') }}/img/slides/slide-bg-2.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg"> -->
-								<img src="{{ asset('desain') }}/HOME_1000x1250.png" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
+								<img src="{{ asset('desain') }}/Web_banner_1920x664.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg">
 
 								<div class="tp-caption" data-x="center" data-hoffset="['-170','-170','-170','-350']" data-y="center" data-voffset="['-50','-50','-50','-75']" data-start="1000" data-transform_in="x:[-300%];opacity:0;s:500;" data-transform_idle="opacity:0.2;s:500;"><img src="{{ asset('template') }}/img/slides/slide-title-border.png" alt=""></div>
 
@@ -235,6 +235,11 @@
 								<div class="tp-dottedoverlay tp-opacity-overlay"></div>
 							</li> -->
 						</ul>
+						<div class="row">
+							<div class="col">
+								<div class="countdown countdown-borders" data-plugin-countdown="" data-plugin-options="{'date': '2020/06/10 12:00:00', 'numberClass': 'font-weight-extra-bold'}"><span class="days"><span class=" font-weight-extra-bold">253</span> DAY<div class="d-inline text-uppercase"></div></span> <span class="hours"><span class=" font-weight-extra-bold">16</span> HRS</span> <span class="minutes"><span class=" font-weight-extra-bold">04</span> MIN</span> <span class="seconds"><span class=" font-weight-extra-bold">14</span> SEC</span> </div>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -248,6 +253,12 @@
 							</div>
 							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
 								<img alt="Esport" width="auto" height="400" src="{{ asset('desain') }}/Maskot.png">
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col">
+								<div class="countdown countdown-borders" data-plugin-countdown="" data-plugin-options="{'date': '2019/10/21 23:59:00', 'numberClass': 'font-weight-extra-bold'}"><span class="days"><span class=" font-weight-extra-bold">253</span> DAY<div class="d-inline text-uppercase"></div></span> <span class="hours"><span class=" font-weight-extra-bold">16</span> HRS</span> <span class="minutes"><span class=" font-weight-extra-bold">04</span> MIN</span> <span class="seconds"><span class=" font-weight-extra-bold">14</span> SEC</span> </div>
 							</div>
 						</div>
 						<!-- <div class="row mb-lg-4">
@@ -429,23 +440,23 @@
 							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
 								<div class="process-step-circle">
 									<strong class="process-step-circle-content">
-									<a><i class="icon-docs icons"></i></a>
+										<a><i class="icon-docs icons"></i></a>
 									</strong>
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pendaftaran</h4>
-									<p class="mb-0 text-white-jiul">30 September 2019 - 24 Oktober 2019</p>
+									<p class="mb-0 text-white-jiul">1 Oktober 2019 - 21 Oktober 2019</p>
 								</div>
 							</div>
 							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="400" style="animation-delay: 400ms;">
 								<div class="process-step-circle">
 									<strong class="process-step-circle-content">
-									<a><i class="icon-people icons"></i></a>
+										<a><i class="icon-people icons"></i></a>
 									</strong>
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Technical Meeting</h4>
-									<p class="mb-0 text-white-jiul">25 Oktober 2019</p>
+									<p class="mb-0 text-white-jiul">18 Oktober 2019</p>
 								</div>
 							</div>
 							<div class="process-step col-lg-4 mb-5 mb-lg-4 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600" style="animation-delay: 600ms;">
@@ -456,7 +467,8 @@
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pelaksanaan</h4>
-									<p class="mb-0 text-white-jiul">Online: 28-31 Oktober 2019</p>
+									<p class="mb-0 text-white-jiul">Online Eksternal: 19-31 Oktober 2019</p>
+									<p class="mb-0 text-white-jiul">Online Internal: 28-31 Oktober 2019</p>
 									<p class="mb-0 text-white-jiul">Offline: 2 November 2019</p>
 								</div>
 							</div>
@@ -594,13 +606,13 @@
 								</section>
 
 								<section class="toggle">
-									<label>Apakah menggunakan koneksi internet sendiri?</label>
+									<label>Apakah menggunakan koneksi internet sendiri ketika pertandingan offline?</label>
 									<p style="height: 0px;" class="">Santuy kami menyediakan koneksi internet.</p>
 								</section>
 
 								<section class="toggle">
-									<label>Apakah bisa mendaftarkan diri dalam 2 tim yang berbeda?</label>
-									<p style="height: 0px;" class=""> Tentu Bisa, tapi hanya 2 ya gaboleh lebih.</p>
+									<label>Apakah bisa mendaftarkan diri lebih dari satu tim?</label>
+									<p style="height: 0px;" class=""> Tentu Bisa, tapi hanya 3 ya gaboleh lebih.</p>
 								</section>
 
 								<section class="toggle">
@@ -641,7 +653,7 @@
 									</div>
 									<div class="feature-box-info pl-1">
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">ADDRESS</h5>
-										<p class="text-color-light font-weight-semibold mb-0">Coming Soon</p>
+										<p class="text-color-light font-weight-semibold mb-0">Ruang 203 Lt. 2, Gedung DKV, ITS, Surabaya</p>
 									</div>
 								</div>
 							</div>
@@ -652,7 +664,8 @@
 									</div>
 									<div class="feature-box-info pl-1">
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">CALL US NOW</h5>
-										<a href="tel:0" class="text-color-light font-weight-semibold text-decoration-none">Coming Soon</a>
+										<a href="tel:082331211245" class="text-color-light font-weight-semibold text-decoration-none">Hani(WA) - 082331211245</a><br>
+										<a href="tel:082192695300" class="text-color-light font-weight-semibold text-decoration-none">Rio(WA) - 082192695300</a>
 									</div>
 								</div>
 							</div>
@@ -705,6 +718,7 @@
 		<script src="{{ asset('template') }}/vendor/isotope/jquery.isotope.min.js"></script>
 		<script src="{{ asset('template') }}/vendor/owl.carousel/owl.carousel.min.js"></script>
 		<script src="{{ asset('template') }}/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		<script src="{{ asset('template') }}/vendor/jquery.countdown/jquery.countdown.min.js"></script>
 		<!-- <script src="{{ asset('template') }}/vendor/vide/jquery.vide.min.js"></script> -->
 		<!-- <script src="{{ asset('template') }}/vendor/vivus/vivus.min.js"></script> -->
 
