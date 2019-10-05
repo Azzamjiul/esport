@@ -11,7 +11,7 @@ class Match extends Model
     protected $table = 'pertandingan';
 
     protected $fillable = [
-        'match_start', 'match_end', 'winner',
+        'id_name', 'name', 'seed', 'round', 'score', 'foto1', 'foto2', 'foto3', 'foto4', 'foto5', 'foto6', 'fk_operator_id',
     ];
 
     public function team_id1()
@@ -26,7 +26,7 @@ class Match extends Model
 
     public function win()
     {
-        return $this->hasOne('App\User', 'id');
+        return $this->hasOne('App\User', 'id', 'seed');
     }
 
     public function photo()

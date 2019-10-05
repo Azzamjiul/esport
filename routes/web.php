@@ -20,7 +20,7 @@ Route::get('/home', function () {
 });
 Route::get('/dashboard', 'HomeController@index')->name('home');
 
-Route::prefix('peserta')->group(function () {
+Route::prefix('peserta')->middleware('auth','peserta')->group(function () {
     Route::resource('peserta', 'PesertaController');
     Route::post('simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('peserta.simpan_tim_permanen');
     Route::post('upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
@@ -42,4 +42,11 @@ Route::prefix('operator')->name('operator.')->group(function () {
     Route::get('team/{id}', 'OperatorController@team')->name('team_detail');
     Route::post('verif/{id}', 'OperatorController@verify')->name('verifikasi_detail_team');
     Route::post('verifikasi_tim/{id}', 'OperatorController@verifikasi_tim')->name('verifikasi_tim');
+
+    //generate pertandingan
+    Route::post('generate', 'OperatorController@generate')->name('generate');
+
+    Route::post('win/{id}', 'OperatorController@win')->name('win');
 });
+
+Route::get('/bagan', 'MatchController@index');

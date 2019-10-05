@@ -19,6 +19,14 @@ class CreatePertandinganTable extends Migration
             $table->string('name');
             $table->integer('seed');
             $table->integer('round');
+            $table->integer('score');
+            $table->string('foto1')->nullable();
+            $table->string('foto2')->nullable();
+            $table->string('foto3')->nullable();
+            $table->string('foto4')->nullable();
+            $table->string('foto5')->nullable();
+            $table->string('foto6')->nullable();
+            $table->integer('fk_operator_id');
             $table->timestamps();
         });
     }

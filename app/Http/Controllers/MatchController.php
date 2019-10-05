@@ -17,7 +17,7 @@ class MatchController extends Controller
         // return $rounds;
         $round = 1;
         for ($j = $round; $j <= $rounds; $j = $j + 1) {
-            $matches = Match::where('round', $j)->get();
+            $matches = Match::where('round', $j)->orderBy('seed', 'ASC')->get();
             // $result[] = count($matches);
             if (count($matches) > 1) {
                 if (count($matches) % 2 == 0) {
@@ -27,15 +27,17 @@ class MatchController extends Controller
                             [
                                 [
                                     "name"  =>   $matches[$i]->name,
-                                    "id"    =>   $matches[$i]->id_name,
+                                    "id"    =>   $matches[$i]->id,
                                     "seed"  =>   $matches[$i]->seed,
-                                    "round" =>   $matches[$i]->round
+                                    "round" =>   $matches[$i]->round,
+                                    "score" =>   $matches[$i]->score
                                 ],
                                 [
                                     "name"  =>   $matches[$i + 1]->name,
-                                    "id"    =>   $matches[$i + 1]->id_name,
+                                    "id"    =>   $matches[$i + 1]->id,
                                     "seed"  =>   $matches[$i + 1]->seed,
-                                    "round" =>   $matches[$i + 1]->round
+                                    "round" =>   $matches[$i + 1]->round,
+                                    "score" =>   $matches[$i + 1]->score
                                 ],
                             ];
                     }
@@ -47,15 +49,17 @@ class MatchController extends Controller
                             [
                                 [
                                     "name"  =>   $matches[$i]->name,
-                                    "id"    =>   $matches[$i]->id_name,
+                                    "id"    =>   $matches[$i]->id,
                                     "seed"  =>   $matches[$i]->seed,
-                                    "round" =>   $matches[$i]->round
+                                    "round" =>   $matches[$i]->round,
+                                    "score" =>   $matches[$i]->score
                                 ],
                                 [
                                     "name"  =>   $matches[$i + 1]->name,
-                                    "id"    =>   $matches[$i + 1]->id_name,
+                                    "id"    =>   $matches[$i + 1]->id,
                                     "seed"  =>   $matches[$i + 1]->seed,
-                                    "round" =>   $matches[$i + 1]->round
+                                    "round" =>   $matches[$i + 1]->round,
+                                    "score" =>   $matches[$i + 1]->score
                                 ],
                             ];
                             
@@ -67,9 +71,10 @@ class MatchController extends Controller
                         [
                             [
                                 "name"  =>   $matches[$wk]->name,
-                                "id"    =>   $matches[$wk]->id_name,
+                                "id"    =>   $matches[$wk]->id,
                                 "seed"  =>   $matches[$wk]->seed,
-                                "round" =>   $matches[$wk]->round
+                                "round" =>   $matches[$wk]->round,
+                                "score" =>   $matches[$wk]->score
                             ]
                         ];
                     // return $round_array;
@@ -80,9 +85,10 @@ class MatchController extends Controller
                     [
                         [
                             "name"  =>   $matches[0]->name,
-                            "id"    =>   $matches[0]->id_name,
+                            "id"    =>   $matches[0]->id,
                             "seed"  =>   $matches[0]->seed,
-                            "round" =>   $matches[0]->round
+                            "round" =>   $matches[0]->round,
+                            "score" =>   $matches[0]->score
                         ]
                     ];
             }
@@ -92,7 +98,7 @@ class MatchController extends Controller
 
         // $result = "wkwk";
 
-        // return $result;
+        return dd($result);
         return view('match')->with('result', json_encode($result));
     }
 }
