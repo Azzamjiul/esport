@@ -9574,7 +9574,7 @@ html.boxed .nav-secondary.sticky-active {
 
 .process .process-step-circle-content {
 	font-weight: bold;
-	color: #212529;
+	color: #fff;
 	font-size: 1.6em;
 	letter-spacing: -1px;
 	-webkit-transition: all 0.2s ease-in-out;

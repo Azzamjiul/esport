@@ -17,10 +17,10 @@
                     <table class="table" style="text-align:center">
                         <thead>
                             <th>#</th>
-                            <th>ID MLBB</th>
-                            <th>Nick Name</th>
-                            <th>Nama Lengkap</th>
-                            <th>Tanda Pengenal</th>
+                            <th>ID ML</th>
+                            <th>Nickname ML</th>
+                            <th>Nama Pemain</th>
+                            <th>Uploud pengena</th>
                             @if($team->registration_status == 1)
                             <th>Aksi</th>
                             @else
@@ -58,9 +58,13 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="card" style="width: 18rem;">
+                                            <div class="card" style="width: 100%;">
+                                            @if($team_detail->identity_card != 'noimage.jpg')
                                                 <?php $image = 'team_' . Auth::user()->id . '/' . $team_detail->identity_card ?>
                                                 <img src="{{ asset('team_detail') }}/{{$image}}" class="card-img-top" alt="">
+                                            @else
+                                                <h2 class="badge badge-danger">tidak ada gambar</h2>
+                                            @endif
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

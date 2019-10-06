@@ -15,13 +15,18 @@
                     </div>
                     @endif
 
-                    <div class="form-group">
-                        <label for="">Bukti Pembayaran</label><br>
-                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$team->bukti_bayar) }}"><a>
-                    </div>
-                    <div>
-                        <a href="{{url('validation', $team->id)}}" class="btn btn-outline-primary">Validasi</a>
-                    </div>
+                    <form action="{{ route('operator.validasi_pembayaran', $team->id) }}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Bukti Pembayaran</label><br>
+                            <img width="500px" src="{{ url('/bukti_bayar/'.$team->bukti_bayar) }}">
+                        </div>
+                        @if($team->bukti_bayar != null)
+                        <div>
+                            <button type="submit" class="btn btn-outline-primary">Validasi Pembayaran {{$team->bukti_bayar}}</button>
+                        </div>
+                        @endif
+                    </form>
                 </div>
             </div>
             @elseif($team->registration_status == 1)
@@ -51,10 +56,10 @@
                     <table class="table" style="text-align:center">
                         <thead>
                             <th>#</th>
-                            <th>ID MLBB</th>
-                            <th>Nick Name</th>
-                            <th>Nama Lengkap</th>
-                            <th>Tanda Pengenal</th>
+                            <th>ID ML</th>
+                            <th>Nickname ML</th>
+                            <th>Nama Pemain</th>
+                            <th>Uploud pengena</th>
                             @if($team->registration_status == 1)
                             <th>Aksi</th>
                             @else
@@ -63,7 +68,8 @@
                             <th>Aksi</th>
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
+                            <?php $i = 1;
+                            $semua = 0; ?>
                             @foreach($team_details as $team_detail)
                             <tr>
                                 <td>{{$i++}}</td>
@@ -77,6 +83,7 @@
                                 <td>
                                     @if($team_detail->validation_status)
                                     <h6><span class="badge badge-success">Sudah terverifikasi</span></h6>
+                                    <?php $semua++; ?>
                                     @else
                                     <h6><span class="badge badge-danger">Belum terverifikasi</span></h6>
                                     @endif
@@ -84,7 +91,10 @@
                                 @endif
                                 <td>
                                     @if($team_detail->validation_status == 0)
-                                    <a class="btn btn-sm btn-success" href="{{url('verif', $team_detail->id)}}">Verifikasi</a>
+                                    <form action="{{ route('operator.verifikasi_detail_team', $team_detail->id) }}" method="post">
+                                        @csrf
+                                        <button class="btn btn-sm btn-success">Verifikasi</button>
+                                    </form>
                                     @endif
                                 </td>
                             </tr>
@@ -99,7 +109,7 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="card" style="width: 18rem;">
-                                                <?php $image = 'team_' . Auth::user()->id . '/' . $team_detail->identity_card ?>
+                                                <?php $image = 'team_' . $team->id . '/' . $team_detail->identity_card ?>
                                                 <img src="{{ asset('team_detail') }}/{{$image}}" class="card-img-top" alt="">
                                             </div>
                                             <div class="modal-footer">
@@ -118,6 +128,12 @@
                         <button class="btn btn-md btn-primary" onclick="return confirm('Are you sure?')">Simpan Permanen</button>
                     </form>
                     @else
+                    @if($semua == 7)
+                    <form action="{{route('operator.verifikasi_tim', $team->id)}}" id="validasi_team_detail_form" method="post" style="display:inline">
+                        @csrf
+                        <button class="btn btn-md btn-success" id="validasi_team_detail_button" type="submit">Simpan</button>
+                    </form>
+                    @endif
                     <a href="{{route('home')}}" class="btn btn-md btn-primary">Kembali</a>
                     @endif
                 </div>

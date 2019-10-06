@@ -31,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/peserta';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -73,24 +73,24 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'telp'  => $data['telp'],
-                'invoice' => 50000 + User::count(),
+                'invoice' => 100000 + User::count(),
                 'fk_operator_id' => 0,
                 'registration_status' => 0,
                 'bukti_bayar' => NULL,
                 'type' => 0,
             ]);
                 
-            for ($i=0; $i < 7; $i++) { 
-                Team_Detail::create([
-                    'game_id' => 'default',
-                    'account_name' => 'default',
-                    'full_name' => 'default',
-                    'identity_card' => 'noimage.jpg',
-                    'fk_team_id' => User::latest()->first()->id,
-                    'fk_operator_id' => 0,
-                    'validation_status' => 0
-                ]);
-            }
+            // for ($i=0; $i < 7; $i++) { 
+            //     Team_Detail::create([
+            //         'game_id' => 'default',
+            //         'account_name' => 'default',
+            //         'full_name' => 'default',
+            //         'identity_card' => 'noimage.jpg',
+            //         'fk_team_id' => User::latest()->first()->id,
+            //         'fk_operator_id' => 0,
+            //         'validation_status' => 0
+            //     ]);
+            // }
             
             DB::commit();
             return $wkwk;

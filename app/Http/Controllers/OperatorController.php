@@ -21,17 +21,19 @@ class OperatorController extends Controller
         return view('operator.match', $data);
     }
 
-    public function teams()
-    {
-        $data['teams'] = User::all();
-        return view('operator.team_index', $data);
-    }
-
     public function match_detail($id)
     {
         $data['match'] = Match::find($id);
         $data['photos'] = Match::find($id)->photo;
         return view('operator.match_detail', $data);
+    }
+
+
+
+    public function teams()
+    {
+        $data['teams'] = User::where('type', 0)->get();
+        return view('operator.team_index', $data);
     }
 
     public function team($id)
@@ -43,6 +45,7 @@ class OperatorController extends Controller
 
     public function verify($id)
     {
+        // return $id;
         $team_detail = Team_Detail::find($id);
         $team_detail->validation_status = 1;
         $team_detail->fk_operator_id = Auth::user()->id;
@@ -53,11 +56,35 @@ class OperatorController extends Controller
 
     public function validation($id)
     {
+        // return $id;
         $team = User::find($id);
         $team->registration_status = 1;
         $team->fk_operator_id = Auth::user()->id;
         $team->save();
 
+        for ($i = 0; $i < 7; $i++) {
+            Team_Detail::create([
+                'game_id' => 'default',
+                'account_name' => 'default',
+                'full_name' => 'default',
+                'identity_card' => 'noimage.jpg',
+                'fk_team_id' => $id,
+                'fk_operator_id' => 0,
+                'validation_status' => 0
+            ]);
+        }
+
         return redirect()->back();
+    }
+
+    public function verifikasi_tim($id)
+    {
+        // return "wkwk";
+        $team = User::find($id);
+        $team->update([
+            'registration_status' => 3
+        ]);
+        $team->save();
+        return redirect()->route('operator.teams');
     }
 }

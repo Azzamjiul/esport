@@ -20,15 +20,19 @@
           @if(Auth::user()->type == 0)
           @if($data->registration_status == 0)
           <div class="jumbotron">
-            <h1 class="display-4">Halo, {{ Auth::user()->name }}!</h1>
+            <h1>Halo, {{ Auth::user()->name }}!</h1>
             <p class="lead">Selamat tim kamu sudah terdaftar! Namun, masih belum bisa mengikuti pertandingan nih. Agar bisa ikut pertandingan, segera konfirmasi pembayaran kamu ya :)</p>
             <hr class="my-4">
-            <p>Batas waktu konfirmasi pembayaran pada tanggal <span class="badge badge-danger">29 September 2019</span></p>
+            <h1>Biaya Pendaftaran <span class="badge badge-warning">Rp.{{ number_format(Auth::user()->invoice) }}</span></h1>
+            <!-- <span class="btn btn-info btn-lg">Transfer ke Rekening 000.000.0000 a.n. Panitia Esport ITS</span> -->
+            <span class="btn btn-primary btn-lg">Untuk Pembayaran Akan diberitahukan lebih lanjut</span>
+            <br><br>
+            <!-- <p>Batas waktu konfirmasi pembayaran pada tanggal <span class="badge badge-danger">16 Oktober 2019 Pukul 23.59 WIB</span></p> -->
             @if($data->bukti_bayar == null)
-            <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Konfirmasi Sekarang</a>
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Konfirmasi Sekarang</a> -->
             @else
             <h1><span class="badge badge-warning">Bukti transfer sudah diunggah tunggu validasi dari panitia</span></h1>
-            <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Perbarui bukti transfer</a>
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Perbarui bukti transfer</a> -->
             @endif
           </div>
           @elseif($data->registration_status == 1)
@@ -37,7 +41,7 @@
             <h1 class="display-4">Halo, {{ Auth::user()->name }}!</h1>
             <p class="lead">Selamat pembayaran kamu sudah <span class="badge badge-success">Terkonfirmasi!</span> Segera lengkapi detail tim kamu ya.</p>
             <hr class="my-4">
-            <p>Batas waktu melengkapi detail tim pada tanggal <span class="badge badge-danger">29 September 2019</span></p>
+            <p>Batas waktu melengkapi detail tim pada tanggal <span class="badge badge-danger">17 Oktober 2019 Pukul 23.59 WIB</span></p>
             <a class="btn btn-primary btn-lg" href="{{ route('peserta.index') }}" role="button">Lengkapi Sekarang</a>
           </div>
           @elseif($data->registration_status == 2)
@@ -55,6 +59,7 @@
             <h3>Status kamu <span class="badge badge-success">Siap Bertanding</span></h3>
           </div>
           @endif
+          @else
           @endif
         </div>
       </div>
@@ -83,12 +88,12 @@
           @endif
 
           <div class="form-group">
-            <label for="">Pilih gambar</label>
+            <label for="">Pilih gambar (Maksimal 1 MB)</label> <br>
             <input type="file" name="image">
             <p class="text-danger">{{ $errors->first('image') }}</p>
           </div>
           <div class="form-group">
-            <button class="btn btn-danger btn-sm">Upload</button>
+            <button type="submit" class="btn btn-danger btn-sm">Upload</button>
           </div>
         </form>
       </div>

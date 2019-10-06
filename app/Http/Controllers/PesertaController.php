@@ -23,7 +23,7 @@ class PesertaController extends Controller
         $this->path_team_detail = public_path('team_detail');
         // definiska dimensi
         // $this->dimensions = ['245'];
-        $this->dimension = '300';
+        $this->dimension = '500';
     }
 
     /**
@@ -35,45 +35,13 @@ class PesertaController extends Controller
     {
         $team = User::where('id', Auth::user()->id)->first();
         if ($team->registration_status == 0) {
-            return redirect()->route('home')->with('message-error', 'Anda harus melakukan konfirmasi pembayaran terlebih dahulu');
+            return redirect()->route('home')->with('message-error', 'Kamu harus melakukan konfirmasi pembayaran terlebih dahulu');
         } else if ($team->registration_status < 3) {
             $team_details = Team_Detail::where('fk_team_id', Auth::user()->id)->get();
             return view('peserta.detail_tim.index', compact('team', 'team_details'));
         } else {
-            return redirect()->route('home')->with('message-error', 'anda tidak diizinkan untuk mengakses halaman tersebut');
+            return redirect()->route('home')->with('message-success', 'tim kamu sudah siap bertanding');
         }
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -96,47 +64,36 @@ class PesertaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // update tim detail
     public function update(Request $request, $id)
     {
-        // return $request;
         $team_detail = Team_Detail::where('id', $id);
         // return $team_detail->first();
 
         if ($team_detail->first()->identity_id == 'noimage.jpg') {
             $this->validate($request, [
-                'identity_card' => 'required|image|mimes:jpg,png,jpeg'
+                'identity_card' => 'required'
             ]);
         } else {
             $this->validate($request, [
-                'identity_card' => 'image|mimes:jpg,png,jpeg'
+                'identity_card' => ''
             ]);
         }
 
-        // ambil file gambar
+        // return $request->file('identity_card');
+
+        // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('identity_card');
+        $ext = $file->getClientOriginalExtension();
+        $fileName = 'member_' . $id . '.' .$ext;
+        // return $fileName;
 
-        if($file){
-            // rename file
-            $fileName = 'member' . $id . '.' . $file->getClientOriginalExtension();
-            
-            // membuat canvas sebesar dimensi
-            $canvas = Image::canvas($this->dimension, $this->dimension);
-            
-            // resize image
-            $resizeImage = Image::make($file)->resize($this->dimension, $this->dimension, function ($constraint) {
-                $constraint->aspectRatio();
-            });
-            
-            // masukkan resize image ke canvas
-            $canvas->insert($resizeImage, 'center');
+        
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = $this->path_team_detail . '/team_' . Auth::user()->id;
+        // return $tujuan_upload;
 
-            if (!File::isDirectory($this->path_team_detail. '/team_' . Auth::user()->id)) {
-                File::makeDirectory($this->path_team_detail. '/team_' . Auth::user()->id);
-            }
-            
-            // Upload compressed file
-            $canvas->save($this->path_team_detail . '/team_' . Auth::user()->id . '/' . $fileName);
-        }
+        $file->move($tujuan_upload,$fileName);
 
         if ($team_detail->first()->identity_id == 'noimage.jpg') {
             $team_detail->update([
@@ -144,7 +101,7 @@ class PesertaController extends Controller
                 'account_name' => $request->account_name,
                 'full_name' => $request->full_name,
             ]);
-        }else{
+        } else {
             $team_detail->update([
                 'game_id' => $request->game_id,
                 'account_name' => $request->account_name,
@@ -154,17 +111,6 @@ class PesertaController extends Controller
         }
 
         return redirect()->route('peserta.index')->with('message-success', 'Data berhasil diperbaharui');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     public function simpan_tim_permanen(Request $request)
@@ -178,39 +124,27 @@ class PesertaController extends Controller
 
     public function upload_bukti(Request $request)
     {
-        // return $request;
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpg,png,jpeg'
+            'image' => 'required'
         ]);
-
-        // jika folder beluma da
-        if (!File::isDirectory($this->path_bukti_bayar)) {
-            File::makeDirectory($this->path_bukti_bayar);
-        }
-
-        // ambil file gambar
+            
+        // menyimpan data file yang diupload ke variabel $file
         $file = $request->file('image');
+        // return $file;
+        $ext = $file->getClientOriginalExtension();
+        $fileName = 'team_' . Auth::user()->id . '.' .$ext;
 
-        // rename file
-        $fileName = 'team_' . Auth::user()->id . '.' . $file->getClientOriginalExtension();
+        
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = $this->path_bukti_bayar;
+        // return $tujuan_upload;
 
-        // membuat canvas sebesar dimensi
-        $canvas = Image::canvas($this->dimension, $this->dimension);
-
-        // resize image
-        $resizeImage = Image::make($file)->resize($this->dimension, $this->dimension, function ($constraint) {
-            $constraint->aspectRatio();
-        });
-
-        // masukkan resize image ke canvas
-        $canvas->insert($resizeImage, 'center');
-        // Upload original file
-        $canvas->save($this->path_bukti_bayar . '/' . $fileName);
-
+        $file->move($tujuan_upload,$fileName);
+            
         User::where('id', Auth::user()->id)->update([
             'bukti_bayar' => $fileName
         ]);
-
+     
         return redirect()->route('home')->with('message-success', 'Bukti pembayaran berhasil diunggah');
     }
 }
