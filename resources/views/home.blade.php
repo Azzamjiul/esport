@@ -17,6 +17,7 @@
           </div>
           @endif
 
+          @if(Auth::user()->type == 0)
           @if($data->registration_status == 0)
           <div class="jumbotron">
             <h1 class="display-4">Halo, {{ Auth::user()->name }}!</h1>
@@ -50,8 +51,10 @@
           @elseif($data->registration_status == 3)
           <div class="jumbotron">
             <h1 class="display-4">Halo, {{ Auth::user()->name }}!</h1>
-            <p class="lead">Selamat kamu sudah siap mengikuti perlombaan.</p> <h3>Status kamu <span class="badge badge-success">Siap Bertanding</span></h3>
+            <p class="lead">Selamat kamu sudah siap mengikuti perlombaan.</p>
+            <h3>Status kamu <span class="badge badge-success">Siap Bertanding</span></h3>
           </div>
+          @endif
           @endif
         </div>
       </div>
