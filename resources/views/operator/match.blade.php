@@ -13,7 +13,6 @@
                     <tr>
                         <th>Ronde</th>
                         <th>Pertandingan</th>
-                        <th>Score</th>
                         <th>Aksi</th>
                         <th>Pemenang</th>
                     </tr>
@@ -34,31 +33,22 @@
                                     @endif
                                 </td>
                                 <td>
-                                    {{$result[$i][$j][0]['score']}}
-                                    
-                                    @if(isset($result[$i][$j][1]))
-                                    VS
-                                    {{$result[$i][$j][1]['score']}}
-                                    <br><br>
-                                    @endif
-                                </td>
-                                <td>
                                     <a class="btn btn-outline-primary" href="{{route('operator.match_detail', $result[$i][$j][0]['id'])}}">Detail Team 1</a>
                                     @if(isset($result[$i][$j][1]))
-                                    <a class="btn btn-outline-primary" href="{{route('operator.match_detail', $result[$i][$j][0]['id'])}}">Detail Team 2</a>
+                                    <a class="btn btn-outline-primary" href="{{route('operator.match_detail', $result[$i][$j][1]['id'])}}">Detail Team 2</a>
                                     @endif
                                 </td>
                                 <td>
+                                    <select class="form-control" id="select">
+                                        <option value="$result[$i][$j][0]['id']">Team 1</option>
+                                        @if(isset($result[$i][$j][1]))
+                                        <option value="$result[$i][$j][1]['id']">Team 2</option>
+                                        @endif
+                                    </select>
                                     <form action="{{route('operator.win', $result[$i][$j][0]['id'])}}" method="post">
                                         @csrf
-                                        <button class="btn btn-sm btn-success">Team 1 Menang</button>
+                                        <button class="btn btn-sm btn-success">Menang</button>
                                     </form>
-                                    @if(isset($result[$i][$j][1]))
-                                    <form action="{{route('operator.win', $result[$i][$j][0]['id'])}}" method="post">
-                                        @csrf
-                                        <button class="btn btn-sm btn-success">Team 2 Menang</button>
-                                    </form>
-                                    @endif
                                 </td>
                             @endfor       
                             </tr>
