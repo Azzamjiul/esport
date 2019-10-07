@@ -98,7 +98,7 @@ class MatchController extends Controller
 
         // $result = "wkwk";
 
-        return dd($result);
+        // return dd($result);
         return view('match')->with('result', json_encode($result));
     }
 }

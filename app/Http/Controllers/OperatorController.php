@@ -184,7 +184,7 @@ class OperatorController extends Controller
             Match::create([
                 'id_name' => $teams[$i]->id,
                 'name' => $teams[$i]->name,
-                'seed' => $teams[$i]->id,
+                'seed' => $i + 1,
                 'round' => 1,
                 'score' => 0,
                 'foto1' => 'noimage.jpg',
@@ -205,7 +205,7 @@ class OperatorController extends Controller
         Match::create([
             'id_name' => $team->id,
                 'name' => $team->name,
-                'seed' => $team->id,
+                'seed' => $team->seed,
                 'round' => $team->round + 1,
                 'score' => 0,
                 'foto1' => 'noimage.jpg',
