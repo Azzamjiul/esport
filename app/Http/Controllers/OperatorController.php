@@ -179,23 +179,29 @@ class OperatorController extends Controller
     }
 
     public function generate(){
-        $teams = User::inRandomOrder()->where('registration_status', '=', '3')->where('type', '=', '0')->get();
-        for($i = 0; $i < count($teams); $i++){
-            Match::create([
-                'id_name' => $teams[$i]->id,
-                'name' => $teams[$i]->name,
-                'seed' => $i + 1,
-                'round' => 1,
-                'score' => 0,
-                'foto1' => 'noimage.jpg',
-                'foto2' => 'noimage.jpg',
-                'foto3' => 'noimage.jpg',
-                'foto4' => 'noimage.jpg',
-                'foto5' => 'noimage.jpg',
-                'foto6' => 'noimage.jpg',
-                'fk_operator_id' => 0,
-            ]);
-        }
+        $teams = User::inRandomOrder()->where('registration_status', '=', '3')->where('type', '=', '0')->where('status', '=', '0')->get();
+        $match = Match::all();
+        $sum = count($match);
+        if(count($teams) > 0)
+            for($i = 0; $i < count($teams); $i++){
+                Match::create([
+                    'id_name' => $teams[$i]->id,
+                    'name' => $teams[$i]->name,
+                    'seed' => $sum = $sum + 1,
+                    'round' => 1,
+                    'score' => 0,
+                    'foto1' => 'noimage.jpg',
+                    'foto2' => 'noimage.jpg',
+                    'foto3' => 'noimage.jpg',
+                    'foto4' => 'noimage.jpg',
+                    'foto5' => 'noimage.jpg',
+                    'foto6' => 'noimage.jpg',
+                    'fk_operator_id' => 0,
+                ]);
+                $teams[$i]->update([
+                    'status' => 1,
+                ]);
+            }
         // return dd($teams);
         return redirect()->back();
     }

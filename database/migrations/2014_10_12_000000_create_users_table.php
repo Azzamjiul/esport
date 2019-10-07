@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('type');
             $table->string('telp');
             $table->string('password');
+            $table->boolean('status');
             $table->rememberToken();
             $table->timestamps();
         });
