@@ -207,8 +207,11 @@ class OperatorController extends Controller
     }
     
     public function win(Request $request){
-        return $request;
-        $team = Match::find($id);
+        // return $request;
+        $team = Match::find($request->winner_id);
+        $team->update([
+            'score' => 1,
+        ]);
         Match::create([
             'id_name' => $team->id,
                 'name' => $team->name,

@@ -46,7 +46,7 @@ Route::prefix('operator')->name('operator.')->group(function () {
     //generate pertandingan
     Route::post('generate', 'OperatorController@generate')->name('generate');
 
-    Route::post('win/{id}', 'OperatorController@win')->name('win');
+    Route::post('win', 'OperatorController@win')->name('win');
 });
 
 Route::get('/bagan', 'MatchController@index');

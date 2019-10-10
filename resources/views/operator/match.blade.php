@@ -39,16 +39,26 @@
                                     @endif
                                 </td>
                                 <td>
+                                @if(isset($result[$i][$j][1]))
+                                @if($result[$i][$j][0]['score'] != 0 || $result[$i][$j][1]['score'] != 0)
+                                    @if($result[$i][$j][0]['score'] == 1)
+                                        {{$result[$i][$j][0]['name']}}
+                                    @elseif($result[$i][$j][1]['score'] == 1)
+                                        {{$result[$i][$j][1]['name']}}
+                                    @endif
+                                @else
                                 <form action="{{route('operator.win')}}" method="post">
                                     @csrf
-                                    <select class="form-control" id="select">
-                                        <option value="{{$result[$i][$j][0]['id']}}">Team 1</option>
+                                    <select name="winner_id" class="form-control" id="select">
+                                        <option value="{{$result[$i][$j][0]['id']}}">{{$result[$i][$j][0]['name']}}</option>
                                         @if(isset($result[$i][$j][1]))
-                                        <option value="{{$result[$i][$j][1]['id']}}">Team 2</option>
+                                        <option value="{{$result[$i][$j][1]['id']}}">{{$result[$i][$j][1]['name']}}</option>
                                         @endif
                                     </select>
                                         <button class="btn btn-sm btn-success">Menang</button>
                                     </form>
+                                @endif
+                                @endif
                                 </td>
                             @endfor       
                             </tr>
