@@ -39,14 +39,14 @@
                                     @endif
                                 </td>
                                 <td>
+                                <form action="{{route('operator.win')}}" method="post">
+                                    @csrf
                                     <select class="form-control" id="select">
-                                        <option value="$result[$i][$j][0]['id']">Team 1</option>
+                                        <option value="{{$result[$i][$j][0]['id']}}">Team 1</option>
                                         @if(isset($result[$i][$j][1]))
-                                        <option value="$result[$i][$j][1]['id']">Team 2</option>
+                                        <option value="{{$result[$i][$j][1]['id']}}">Team 2</option>
                                         @endif
                                     </select>
-                                    <form action="{{route('operator.win', $result[$i][$j][0]['id'])}}" method="post">
-                                        @csrf
                                         <button class="btn btn-sm btn-success">Menang</button>
                                     </form>
                                 </td>

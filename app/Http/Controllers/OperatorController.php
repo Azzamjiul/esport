@@ -206,7 +206,8 @@ class OperatorController extends Controller
         return redirect()->back();
     }
     
-    public function win($id){
+    public function win(Request $request){
+        return $request;
         $team = Match::find($id);
         Match::create([
             'id_name' => $team->id,
