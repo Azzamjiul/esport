@@ -66,37 +66,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        DB::beginTransaction();
-        try{
-            $wkwk = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'telp'  => $data['telp'],
-                'invoice' => 100000 + User::count(),
-                'fk_operator_id' => 0,
-                'registration_status' => 0,
-                'bukti_bayar' => NULL,
-                'type' => 0,
-            ]);
-                
-            // for ($i=0; $i < 7; $i++) { 
-            //     Team_Detail::create([
-            //         'game_id' => 'default',
-            //         'account_name' => 'default',
-            //         'full_name' => 'default',
-            //         'identity_card' => 'noimage.jpg',
-            //         'fk_team_id' => User::latest()->first()->id,
-            //         'fk_operator_id' => 0,
-            //         'validation_status' => 0
-            //     ]);
-            // }
-            
-            DB::commit();
-            return $wkwk;
-        }catch(Exception $e){
-            DB::rollBack();
-            return 0;
-        }
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'telp'  => $data['telp'],
+            'invoice' => 100000 + User::count(),
+            'fk_operator_id' => 0,
+            'status' => 0,
+            'registration_status' => 0,
+            'bukti_bayar' => NULL,
+            'type' => 0,
+        ]);
+
+        return $user;
     }
 }
