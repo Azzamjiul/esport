@@ -28,19 +28,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // insertUsers('operator', 'operator@gmail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
-        DB::table('users')->insert([
-            'name' => 'operator',
-            'email' => 'operator@gmail.com',
-            'registration_status' => 1,
-            'fk_operator_id' => 1,
-            'invoice' => 100000,
-            'type' => 2,
-            'telp' => '082330037232',
-            'password' => Hash::make('adminadmin'),
-            'created_at' => Carbon::now('Asia/Jakarta'),
-            'updated_at' => Carbon::now('Asia/Jakarta')
-        ]); 
+        insertUsers('operator', 'operator@mail.com', 1, 1, 100000, 2, '123456789', 'adminadmin');
+        insertUsers('Eko Rostiant', 'eko.rostian@gmail.com', 1, 1, 100000, 2, '123456789', '085791212264');
+        insertUsers('Axell Atalla Rajasa', 'axellatalla56@gmail.com', 1, 1, 100000, 2, '123456789', '085959913221');
+        insertUsers('Muhammad Rois Mahmudi', 'roismm04@gmail.com', 1, 1, 100000, 2, '123456789', '085606667638');
     }
     
     public function insertUsers($user, $email, $regis, $op_id, $invoice, $type, $telp, $pass) {
