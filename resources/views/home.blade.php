@@ -25,11 +25,11 @@
             <hr class="my-4">
             <h1>Biaya Pendaftaran <span class="badge badge-warning">Rp.{{ number_format(Auth::user()->invoice) }}</span></h1>
             <!-- <span class="btn btn-info btn-lg">Transfer ke Rekening 000.000.0000 a.n. Panitia Esport ITS</span> -->
-            <span class="btn btn-primary btn-lg">Untuk Pembayaran Akan diberitahukan lebih lanjut</span>
+            <!-- <span class="btn btn-primary btn-lg">Untuk Pembayaran Akan diberitahukan lebih lanjut</span> -->
             <br><br>
             <!-- <p>Batas waktu konfirmasi pembayaran pada tanggal <span class="badge badge-danger">16 Oktober 2019 Pukul 23.59 WIB</span></p> -->
             @if($data->bukti_bayar == null)
-            <!-- <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Konfirmasi Sekarang</a> -->
+            <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Konfirmasi Sekarang</a>
             @else
             <h1><span class="badge badge-warning">Bukti transfer sudah diunggah tunggu validasi dari panitia</span></h1>
             <!-- <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Perbarui bukti transfer</a> -->
