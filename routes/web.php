@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+Auth::routes(['verify' => true]);
+
 Route::get('/', function () {
     return view('index');
 });
@@ -18,7 +19,7 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return redirect()->route('home');
 });
-Route::get('/dashboard', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('home')->middleware(['auth', 'verified']);;
 
 Route::prefix('peserta')->middleware('auth','peserta')->group(function () {
     Route::resource('peserta', 'PesertaController');

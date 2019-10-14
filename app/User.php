@@ -9,7 +9,7 @@ use App\Match;
 use App\Schema;
 use App\Team_Detail;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
