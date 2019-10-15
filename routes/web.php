@@ -21,7 +21,7 @@ Route::get('/home', function () {
 });
 Route::get('/dashboard', 'HomeController@index')->name('home')->middleware(['auth', 'verified']);;
 
-Route::prefix('peserta')->middleware('auth','peserta')->group(function () {
+Route::prefix('peserta')->middleware('auth')->group(function () {
     Route::resource('peserta', 'PesertaController');
     Route::post('simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('peserta.simpan_tim_permanen');
     Route::post('upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
