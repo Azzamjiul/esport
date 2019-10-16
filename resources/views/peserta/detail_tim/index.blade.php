@@ -37,12 +37,14 @@
                                 <td>{{$team_detail->account_name}}</td>
                                 <td>{{$team_detail->full_name}}</td>
                                 <td><a class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal_{{$team_detail->id}}">Lihat</a></td>
-                                @if($team->registration_status == 1)
+                                @if($team->registration_status == 2)
                                 <td><a href="{{ route('peserta.edit', $team_detail->id) }}" class="btn btn-sm btn-warning">Update</a></td>
                                 @else
                                 <td>
-                                    @if($team_detail->validation_status)
+                                    @if($team_detail->validation_status == 1)
                                     <h6><span class="badge badge-success">Sudah terverifikasi</span></h6>
+                                    @elseif($team_detail->validation_status == -1)
+                                    <a href="{{ route('peserta.edit', $team_detail->id) }}" class="btn btn-sm btn-warning">Update</a>
                                     @else
                                     <h6><span class="badge badge-danger">Belum terverifikasi</span></h6>
                                     @endif

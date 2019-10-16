@@ -4,6 +4,10 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <form action="{{route('operator.check')}}" method="post">
+                @csrf
+                <button class="btn btn-sm btn-success">Check Multi Slot</button>
+            </form>
             <table class="table table-striped" style="text-align:center;">
                 <thead>
                     <tr>
@@ -26,10 +30,12 @@
                         <td>
                             @if($team->registration_status == 0)
                             <p class="badge badge-danger">Belum Konfirmasi Pembayaran</p>
+                            @elseif($team->registration_status == -1)
+                            <p class="badge badge-warning">Anggota Tim Mendaftar Lebih Dari 3 Tim</p>
                             @elseif($team->registration_status == 1)
-                            <p class="badge badge-warning">Sudah upload bukti pembayaran</p>
+                            <p class="badge badge-primary">Sudah upload bukti pembayaran</p>
                             @elseif($team->registration_status == 2)
-                            <p class="badge badge-warning">Belum Mengisi Detail Tim</p>
+                            <p class="badge badge-primary">Belum Mengisi Detail Tim</p>
                             @elseif($team->registration_status == 3)
                             <p class="badge badge-info">Belum Konfirmasi Detail Tim</p>
                             @elseif($team->registration_status == 4)

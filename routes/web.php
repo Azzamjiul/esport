@@ -46,7 +46,7 @@ Route::prefix('operator')->name('operator.')->group(function () {
 
     //generate pertandingan
     Route::post('generate', 'OperatorController@generate')->name('generate');
-
+    Route::post('check', 'OperatorController@check')->name('check');
     Route::post('win', 'OperatorController@win')->name('win');
 });
 

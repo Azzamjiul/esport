@@ -34,6 +34,19 @@
               <!-- <p>Batas waktu konfirmasi pembayaran pada tanggal <span class="badge badge-danger">16 Oktober 2019 Pukul 23.59 WIB</span></p> -->
               <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#exampleModal">Konfirmasi Sekarang</a>
             </div>
+            @elseif($data->registration_status == -1)
+            <div class="jumbotron">
+              <h1>Halo, {{ Auth::user()->name }}!</h1>
+              <p class="lead">Akun kamu masih belum bisa bertanding, <span class="badge badge-danger">dikarenakan ada anggota kamu yang ikut lebih dari 3 tim.</p>
+              <hr class="my-4">
+              <h1>Anggota yang melanggar</h1>
+              @foreach($team_detail as $t)
+              <h3></h3><br>
+              <span class="btn btn-danger btn-lg">{{$t->full_name}}</span>
+              @endforeach
+              <p>Silahkan perbarui team anda lagi</p>
+              <a class="btn btn-primary btn-lg" href="{{ route('peserta.index') }}" role="button">Perbarui Sekarang</a>
+            </div>
             @elseif($data->registration_status == 1)
             <div class="jumbotron">
               <h1>Halo, {{ Auth::user()->name }}!</h1>

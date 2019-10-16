@@ -179,7 +179,7 @@ class OperatorController extends Controller
     }
 
     public function generate(){
-        $teams = User::inRandomOrder()->where('registration_status', '=', '3')->where('type', '=', '0')->where('status', '=', '0')->get();
+        $teams = User::inRandomOrder()->where('registration_status', '=', '4')->where('type', '=', '0')->where('status', '=', '0')->get();
         $match = Match::all();
         $sum = count($match);
         if(count($teams) > 0)
@@ -226,6 +226,31 @@ class OperatorController extends Controller
                 'foto6' => 'noimage.jpg',
                 'fk_operator_id' => Auth::user()->id,
         ]);
+        return redirect()->back();
+    }
+
+    public function check(){
+        $members = Team_Detail::selectRaw('*, count(id) as jumlah')->groupBy('full_name')->get();
+        $team_details = Team_Detail::all();
+        foreach($members as $member){
+            if($member->jumlah > 3){
+                foreach($team_details as $team_detail){
+                    if($team_detail->full_name == $member->full_name)
+                        $team_detail->update([
+                            'validation_status' => -1
+                        ]);
+                }
+            }
+        }
+        foreach($team_details as $team_detail){
+            if($team_detail->validation_status == -1){
+                $team = User::where('id', '=', $team_detail->fk_team_id);
+                $team->update([
+                    'registration_status' => -1
+                ]);
+            }
+        }
+        // return $member;
         return redirect()->back();
     }
 }
