@@ -25,7 +25,7 @@ class PesertaController extends Controller
         $team = User::where('id', Auth::user()->id)->first();
         if ($team->registration_status == 0) {
             return redirect()->route('home')->with('message-error', 'Kamu harus melakukan konfirmasi pembayaran terlebih dahulu');
-        } else if ($team->registration_status < 3) {
+        } else if ($team->registration_status < 4) {
             $team_details = Team_Detail::where('fk_team_id', Auth::user()->id)->get();
             return view('peserta.detail_tim.index', compact('team', 'team_details'));
         } else {
@@ -98,7 +98,8 @@ class PesertaController extends Controller
         $tujuan_upload = $this->path_bukti_bayar;
         $file->move($tujuan_upload,$fileName);
         User::where('id', Auth::user()->id)->update([
-            'bukti_bayar' => $fileName
+            'bukti_bayar' => $fileName,
+            'registration_status' => 1
         ]);
      
         return redirect()->route('home')->with('message-success', 'Bukti pembayaran berhasil diunggah');

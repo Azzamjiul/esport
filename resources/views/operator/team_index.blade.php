@@ -27,11 +27,13 @@
                             @if($team->registration_status == 0)
                             <p class="badge badge-danger">Belum Konfirmasi Pembayaran</p>
                             @elseif($team->registration_status == 1)
-                            <p class="badge badge-warning">Belum Mengisi Detail Tim</p>
+                            <p class="badge badge-warning">Sudah upload bukti pembayaran</p>
                             @elseif($team->registration_status == 2)
-                            <p class="badge badge-warning">Belum Konfirmasi Detail Tim</p>
+                            <p class="badge badge-warning">Belum Mengisi Detail Tim</p>
                             @elseif($team->registration_status == 3)
-                            <p class="badge badge-info">Siap Bertanding</p>
+                            <p class="badge badge-info">Belum Konfirmasi Detail Tim</p>
+                            @elseif($team->registration_status == 4)
+                            <p class="badge badge-success">Siap Bertanding</p>
                             @endif
                         </td>
                         <td><a class="btn btn-outline-primary" href="{{route('operator.team_detail', $team->id)}}">Detail</a></td>

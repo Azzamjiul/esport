@@ -28,7 +28,8 @@
                             @endif
                         </thead>
                         <tbody>
-                            <?php $i = 1; ?>
+                            <?php $i = 1;
+                            $semua = 0 ?>
                             @foreach($team_details as $team_detail)
                             <tr>
                                 <td>{{$i++}}</td>
@@ -59,12 +60,13 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="card" style="width: 100%;">
-                                            @if($team_detail->identity_card != 'noimage.jpg')
-                                                <?php $image = 'team_' . Auth::user()->id . '/' . $team_detail->identity_card ?>
+                                                @if($team_detail->identity_card != 'noimage.jpg')
+                                                <?php $image = 'team_' . Auth::user()->id . '/' . $team_detail->identity_card;
+                                                $semua++ ?>
                                                 <img src="{{ asset('team_detail') }}/{{$image}}" class="card-img-top" alt="">
-                                            @else
+                                                @else
                                                 <h2 class="badge badge-danger">tidak ada gambar</h2>
-                                            @endif
+                                                @endif
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -75,12 +77,14 @@
                                 @endforeach
                         </tbody>
                     </table>
-                    @if($team->registration_status == 1)
-                    <form action="{{ route('peserta.simpan_tim_permanen') }}" method="post">
-                        @csrf
-                        <input type="hidden" name="team_id" value="{{ $team->id }}">
-                        <button class="btn btn-md btn-primary" onclick="return confirm('Are you sure?')">Simpan Permanen</button>
-                    </form>
+                    @if($team->registration_status == 2)
+                        @if($semua >= 5)
+                        <form action="{{ route('peserta.simpan_tim_permanen') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="team_id" value="{{ $team->id }}">
+                            <button class="btn btn-md btn-primary" onclick="return confirm('Are you sure?')">Simpan Permanen</button>
+                        </form>
+                        @endif
                     @else
                     <a href="{{route('home')}}" class="btn btn-md btn-primary">Kembali</a>
                     @endif

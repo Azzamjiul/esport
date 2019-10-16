@@ -148,7 +148,7 @@ class OperatorController extends Controller
     {
         // return $id;
         $team = User::find($id);
-        $team->registration_status = 1;
+        $team->registration_status = 2;
         $team->fk_operator_id = Auth::user()->id;
         $team->save();
 
@@ -172,7 +172,7 @@ class OperatorController extends Controller
         // return "wkwk";
         $team = User::find($id);
         $team->update([
-            'registration_status' => 3
+            'registration_status' => 4
         ]);
         $team->save();
         return redirect()->route('operator.teams');

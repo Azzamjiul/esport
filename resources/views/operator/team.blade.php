@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            @if($team->registration_status == 0)
+            @if($team->registration_status == 1)
             <div class="card">
                 <div class="card-header">Validasi Team</div>
 
@@ -29,7 +29,7 @@
                     </form>
                 </div>
             </div>
-            @elseif($team->registration_status == 1)
+            @elseif($team->registration_status == 2)
             <div class="card">
                 <div class="card-header">Validasi Team</div>
 
@@ -42,7 +42,7 @@
                     <p class="lead">Akun telah diverifikasi. Silahkan tunggu akun menyimpan permanen detail tim.</p>
                 </div>
             </div>
-            @elseif($team->registration_status == 2)
+            @elseif($team->registration_status == 3)
             <div class="card">
                 <div class="card-header">Detail Tim</div>
 
@@ -121,19 +121,12 @@
                                 @endforeach
                         </tbody>
                     </table>
-                    @if($team->registration_status == 1)
-                    <form action="{{ route('peserta.simpan_tim_permanen') }}" method="post">
-                        @csrf
-                        <input type="hidden" name="team_id" value="{{ $team->id }}">
-                        <button class="btn btn-md btn-primary" onclick="return confirm('Are you sure?')">Simpan Permanen</button>
-                    </form>
-                    @else
-                    @if($semua == 7)
+                    @if($semua >= 5)
                     <form action="{{route('operator.verifikasi_tim', $team->id)}}" id="validasi_team_detail_form" method="post" style="display:inline">
                         @csrf
                         <button class="btn btn-md btn-success" id="validasi_team_detail_button" type="submit">Simpan</button>
                     </form>
-                    @endif
+                    @else
                     <a href="{{route('home')}}" class="btn btn-md btn-primary">Kembali</a>
                     @endif
                 </div>
