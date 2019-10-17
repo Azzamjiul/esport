@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Match;
+use App\Match_Internal;
 use App\User;
 use App\Team_Detail;
 use Illuminate\Support\Facades\Auth;
@@ -111,6 +112,102 @@ class OperatorController extends Controller
         return view('operator.match', compact('result'));
     }
 
+    public function match_internal()
+    {
+        // $data['matchs'] = Match::all();
+        $result = [];
+        $round_array = [];
+        if($jml = Match_Internal::all()->count()){
+            $i = 0;
+            $rounds = Match_Internal::orderBy('id', 'DESC')->first()->round;
+            // return $rounds;
+            $round = 1;
+            for ($j = $round; $j <= $rounds; $j = $j + 1) {
+                $matches = Match_Internal::where('round', $j)->orderBy('seed', 'ASC')->get();
+                // $result[] = count($matches);
+                if (count($matches) > 1) {
+                    if (count($matches) % 2 == 0) {
+                        for ($i = 0; $i < count($matches); $i = $i + 2) {
+                            $round_array[] =
+                                // per round
+                                [
+                                    [
+                                        "name"  =>   $matches[$i]->name,
+                                        "id"    =>   $matches[$i]->id,
+                                        "seed"  =>   $matches[$i]->seed,
+                                        "round" =>   $matches[$i]->round,
+                                        "score" =>   $matches[$i]->score
+                                    ],
+                                    [
+                                        "name"  =>   $matches[$i + 1]->name,
+                                        "id"    =>   $matches[$i + 1]->id,
+                                        "seed"  =>   $matches[$i + 1]->seed,
+                                        "round" =>   $matches[$i + 1]->round,
+                                        "score" =>   $matches[$i + 1]->score
+                                    ],
+                                ];
+                        }
+                    } else {
+                        $wk = 0;
+                        for ($i = 0; $i < count($matches)-1; $i = $i + 2) {
+                            $round_array[] =
+                                // per round
+                                [
+                                    [
+                                        "name"  =>   $matches[$i]->name,
+                                        "id"    =>   $matches[$i]->id,
+                                        "seed"  =>   $matches[$i]->seed,
+                                        "round" =>   $matches[$i]->round,
+                                        "score" =>   $matches[$i]->score
+                                    ],
+                                    [
+                                        "name"  =>   $matches[$i + 1]->name,
+                                        "id"    =>   $matches[$i + 1]->id,
+                                        "seed"  =>   $matches[$i + 1]->seed,
+                                        "round" =>   $matches[$i + 1]->round,
+                                        "score" =>   $matches[$i + 1]->score
+                                    ],
+                                ];
+                                
+                            $wk = $wk+2;
+                        }
+                        // return $round_array;
+                        $round_array[] =
+                            // per round
+                            [
+                                [
+                                    "name"  =>   $matches[$wk]->name,
+                                    "id"    =>   $matches[$wk]->id,
+                                    "seed"  =>   $matches[$wk]->seed,
+                                    "round" =>   $matches[$wk]->round,
+                                    "score" =>   $matches[$wk]->score
+                                ]
+                            ];
+                        // return $round_array;
+                    }
+                } else {
+                    $round_array[] =
+                        // per round
+                        [
+                            [
+                                "name"  =>   $matches[0]->name,
+                                "id"    =>   $matches[0]->id,
+                                "seed"  =>   $matches[0]->seed,
+                                "round" =>   $matches[0]->round,
+                                "score" =>   $matches[0]->score
+                            ]
+                        ];
+                }
+                $result[] = $round_array;
+                $round_array = [];
+            }
+        }
+        
+        // return dd($result);
+        // return dd($result[0][0][0]);
+        return view('operator.match_internal', compact('result'));
+    }
+
     public function match_detail($id)
     {
         $photo = Match::find($id);
@@ -179,7 +276,7 @@ class OperatorController extends Controller
     }
 
     public function generate(){
-        $teams = User::inRandomOrder()->where('registration_status', '=', '4')->where('type', '=', '0')->where('status', '=', '0')->get();
+        $teams = User::inRandomOrder()->where('registration_status', '=', '4')->where('type', '=', '0')->where('status', '=', '0')->where('external', '=', '1')->get();
         $match = Match::all();
         $sum = count($match);
         if(count($teams) > 0)
@@ -206,6 +303,34 @@ class OperatorController extends Controller
         return redirect()->back();
     }
     
+    public function generate_internal(){
+        $teams = User::inRandomOrder()->where('registration_status', '=', '4')->where('type', '=', '0')->where('status', '=', '0')->where('external', '=', '0')->get();
+        $match = Match_Internal::all();
+        $sum = count($match);
+        if(count($teams) > 0)
+            for($i = 0; $i < count($teams); $i++){
+                Match_Internal::create([
+                    'id_name' => $teams[$i]->id,
+                    'name' => $teams[$i]->name,
+                    'seed' => $sum = $sum + 1,
+                    'round' => 1,
+                    'score' => 0,
+                    'foto1' => 'noimage.jpg',
+                    'foto2' => 'noimage.jpg',
+                    'foto3' => 'noimage.jpg',
+                    'foto4' => 'noimage.jpg',
+                    'foto5' => 'noimage.jpg',
+                    'foto6' => 'noimage.jpg',
+                    'fk_operator_id' => 0,
+                ]);
+                $teams[$i]->update([
+                    'status' => 1,
+                ]);
+            }
+        // return dd($teams);
+        return redirect()->back();
+    }
+
     public function win(Request $request){
         // return $request;
         $team = Match::find($request->winner_id);

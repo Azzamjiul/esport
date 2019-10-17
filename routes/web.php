@@ -33,6 +33,7 @@ Route::prefix('operator')->name('operator.')->group(function () {
 
     // Match
     Route::get('match', 'OperatorController@match')->name('matchs');
+    Route::get('matchin', 'OperatorController@match_internal')->name('matchs_internal');
     Route::get('match_detail/{id}', 'OperatorController@match_detail')->name('match_detail');
 
     // pembayaran
@@ -46,8 +47,10 @@ Route::prefix('operator')->name('operator.')->group(function () {
 
     //generate pertandingan
     Route::post('generate', 'OperatorController@generate')->name('generate');
+    Route::post('generatein', 'OperatorController@generate_internal')->name('generate_internal');
     Route::post('check', 'OperatorController@check')->name('check');
     Route::post('win', 'OperatorController@win')->name('win');
 });
 
 Route::get('/bagan', 'MatchController@index');
+Route::get('/bagan_internal', 'MatchController@index_internal');

@@ -54,7 +54,11 @@
                         @if(Auth::user()->type == 2)
                         <li>
                             <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
-                            href="{{route('operator.matchs')}}">Pertandingan</a>
+                            href="{{route('operator.matchs_internal')}}">Pertandingan Internal</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
+                            href="{{route('operator.matchs')}}">Pertandingan External</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre 
