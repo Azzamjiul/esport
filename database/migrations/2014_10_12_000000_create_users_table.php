@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('telp');
             $table->string('password');
             $table->boolean('status');
+            $table->boolean('external')->default('1');
             $table->timestamp('email_verified_at');
             $table->rememberToken();
             $table->timestamps();
