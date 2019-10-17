@@ -16,6 +16,16 @@ class OperatorController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function dashboard(){
+        $data = Auth::user();
+        $daftar = User::where('type', '=', '0')->count();
+        $belumconfirm = User::where('bukti_bayar', '!=', NULL)->where('registration_status', '=', '0')->count();
+        $sudahconfirm = User::where('registration_status', '=', '1')->where('type', '=', '0')->count();
+        $team_detail = Team_Detail::where('fk_team_id', '=', Auth::user()->id)->where('validation_status', '=', -1)->get();
+        // return $team_detail;
+        return view('operator.dashboard', compact('data', 'daftar', 'belumconfirm', 'sudahconfirm', 'team_detail'));
+    }
+
     public function match()
     {
         // $data['matchs'] = Match::all();
