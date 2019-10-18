@@ -230,7 +230,7 @@ class OperatorController extends Controller
     }
 
     public function check(){
-        $members = Team_Detail::selectRaw('*, count(id) as jumlah')->groupBy('full_name')->get();
+        $members = Team_Detail::selectRaw('*, count(id) as jumlah')->where('full_name', '!=', 'default')->groupBy('full_name')->get();
         $team_details = Team_Detail::all();
         foreach($members as $member){
             if($member->jumlah > 3){
