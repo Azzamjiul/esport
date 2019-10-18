@@ -16,8 +16,10 @@ class Operator
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->type == 2){
-            return $next($request);
+        if(Auth::user() != NULL){
+            if(Auth::user()->type == 2){
+                return $next($request);
+            }
         }else{
             return redirect()->route('home');
         }

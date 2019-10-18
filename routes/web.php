@@ -32,7 +32,7 @@ Route::prefix('peserta')->middleware('auth')->group(function () {
     Route::post('upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
 });
 
-Route::prefix('operator')->name('operator.')->group(function () {
+Route::prefix('operator')->middleware('operator')->name('operator.')->group(function () {
     // dashboard
     Route::get('dashboard', 'OperatorController@dashboard')->name('dashboard');
 
