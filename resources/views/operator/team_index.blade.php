@@ -4,6 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if (session('message-success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('message-success') }}
+                </div>
+            @endif
             <form action="{{route('operator.check')}}" method="post">
                 @csrf
                 <button class="btn btn-sm btn-success">Check Multi Slot</button>

@@ -55,6 +55,9 @@ Route::prefix('operator')->name('operator.')->group(function () {
     Route::post('generatein', 'OperatorController@generate_internal')->name('generate_internal');
     Route::post('check', 'OperatorController@check')->name('check');
     Route::post('win', 'OperatorController@win')->name('win');
+
+    // Upload Bukti
+    Route::post('upload_bukti', 'OperatorController@upload_bukti')->name('upload_bukti');
 });
 
 Route::get('/bagan_eksternal', 'MatchController@index')->name('bagan_eksternal');

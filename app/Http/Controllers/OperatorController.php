@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Auth;
 
 class OperatorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->path_bukti_bayar = public_path('bukti_bayar');
+        $this->path_team_detail = public_path('team_detail');
+        $this->dimension = '500';
+    }
     /**
      * Show the application dashboard.
      *
@@ -19,8 +26,8 @@ class OperatorController extends Controller
     public function dashboard(){
         $data = Auth::user();
         $daftar = User::where('type', '=', '0')->count();
-        $belumconfirm = User::where('bukti_bayar', '!=', NULL)->where('registration_status', '=', '0')->count();
-        $sudahconfirm = User::where('registration_status', '=', '1')->where('type', '=', '0')->count();
+        $belumconfirm = User::where('registration_status', '=', '1')->where('type', '=', '0')->count();
+        $sudahconfirm = User::where('registration_status', '=', '2')->where('type', '=', '0')->count();
         $team_detail = Team_Detail::where('fk_team_id', '=', Auth::user()->id)->where('validation_status', '=', -1)->get();
         // return $team_detail;
         return view('operator.dashboard', compact('data', 'daftar', 'belumconfirm', 'sudahconfirm', 'team_detail'));
@@ -387,5 +394,24 @@ class OperatorController extends Controller
         }
         // return $member;
         return redirect()->back();
+    }
+
+    public function upload_bukti(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'required'
+        ]);
+        $team_id = $request->team_id;
+        $file = $request->file('image');
+        $ext = $file->getClientOriginalExtension();
+        $fileName = 'team_' . $team_id . '.' .$ext;
+        $tujuan_upload = $this->path_bukti_bayar;
+        $file->move($tujuan_upload,$fileName);
+        User::where('id', $team_id)->update([
+            'bukti_bayar' => $fileName,
+            'registration_status' => 1
+        ]);
+     
+        return redirect()->route('operator.teams')->with('message-success', 'Bukti pembayaran berhasil diunggah');
     }
 }

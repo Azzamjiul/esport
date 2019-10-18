@@ -4,7 +4,35 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            @if($team->registration_status == 1)
+            @if($team->registration_status == 0)
+            <div class="card">
+                <div class="card-header">Upload Bukti Bayar Tim</div>
+
+                <div class="card-body">
+                    @if (session('message-success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('message-success') }}
+                    </div>
+                    @endif
+
+                    <form action="{{ route('operator.upload_bukti') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="team_id" value="{{$team->id}}">
+                        <div class="modal-body">
+                            <div class="form-group">
+                            <label for="">Pilih gambar (Maksimal 1 MB)</label> <br>
+                            <input type="file" name="image">
+                            <p class="text-danger">{{ $errors->first('image') }}</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Upload</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            @elseif($team->registration_status == 1)
             <div class="card">
                 <div class="card-header">Validasi Team</div>
 

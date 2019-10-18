@@ -26,7 +26,7 @@
 
                 <!-- Card 2 -->
                 <div class="card">
-                <div class="card-header">Telah Membayar Dan Belum Terkonfirmasi: </div>
+                <div class="card-header">Telah Upload Bukti Bayar Dan Belum Terkonfirmasi: </div>
                 <div class="card-body">
                 <p class="card-text">{{$belumconfirm}}.</p>
                 </div>
@@ -34,7 +34,7 @@
 
                 <!-- Card 3 -->
                 <div class="card">
-                <div class="card-header">Telah Membayar Dan Terkonfirmasi: </div>
+                <div class="card-header">Telah Upload Bukti Bayar Dan Terkonfirmasi: </div>
                 <div class="card-body">
                 <p class="card-text">{{$sudahconfirm}}.</p>
                 </div>
