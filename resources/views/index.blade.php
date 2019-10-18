@@ -11,11 +11,11 @@
 
 	<meta name="keywords" content="Esport Competition Dies Natalies ITS ke-59, Intitut Teknologi Sepuluh Nopember, Esport, Mobile Legend" />
 	<meta name="description" content="Esport Competition Dies Natalies Intitut Teknologi Sepuluh Nopember ke-59">
-	<meta name="author" content="okler.net">
+	<meta name="author" content="Azzam Jihad Ulhaq">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="{{ asset('desain') }}/logo_59.png" type="image/x-icon" />
-	<link rel="apple-touch-icon" href="{{ asset('desain') }}/logo_59.png">
+	<link rel="shortcut icon" href="{{ asset('desain') }}/FAVICON-13.jpg" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{{ asset('desain') }}/FAVICON-13.jpg">
 
 	<!-- Mobile Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
@@ -106,9 +106,18 @@
 													<li>
 														<a class="dropdown-item" data-hash data-hash-offset="68" href="#faq">FAQ</a>
 													</li>
-													<!-- <li>
-														<a class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Contact Us</a>
-													</li> -->
+													<li>
+														<a class="dropdown-item" data-hash data-hash-offset="68" href="{{route('pendaftar.internal')}}">Pendaftar Internal</a>
+													</li>
+													<li class="dropdown">
+														<a data-hash class="dropdown-item dropdown-toggle" href="#hehe">
+															Bagan Pertandingan
+														</a>
+														<ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="{{ route('bagan_eksternal') }}">Bagan Eksternal</a></li>
+                                                            <li><a class="dropdown-item" href="{{ route('bagan_internal') }}">Bagan Internal</a></li>
+														</ul>
+													</li>
 													@guest
 													<li>
 														<a href="{{route('login')}}" class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Login</a>
@@ -355,7 +364,7 @@
 										<a href="{{ asset('ajax') }}/cara-pendaftaran.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<img src="{{ asset('template') }}/img/projects/project.jpg" class="img-fluid border-radius-0" alt="">
+													<img src="{{ asset('desain') }}/GD_IG-14.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner">Cara Pendaftaran</span>
 														<span class="thumb-info-type"></span>
@@ -373,7 +382,7 @@
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
 													<span class="owl-carousel owl-theme dots-inside m-0" data-plugin-options="{'items': 1, 'margin': 20, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}">
-														<span><img src="{{ asset('desain') }}/HADIAH_1000x1000-09.jpg" class="img-fluid border-radius-0" alt=""></span>
+														<span><img src="{{ asset('desain') }}/GD_IG-09.jpg" class="img-fluid border-radius-0" alt=""></span>
 													</span>
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner">Hadiah</span>
@@ -391,7 +400,7 @@
 										<a href="{{ asset('ajax') }}/peraturan-internal.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<img src="{{ asset('desain') }}/PERATURAN_1000x1000.jpg" class="img-fluid border-radius-0" alt="">
+													<img src="{{ asset('desain') }}/GD_IG-10.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
 														<span class="thumb-info-inner">Peraturan Internal</span>
 														<span class="thumb-info-type"></span>
@@ -408,9 +417,9 @@
 										<a href="{{ asset('ajax') }}/peraturan-eksternal.html" data-ajax-on-modal>
 											<span class="thumb-info thumb-info-lighten">
 												<span class="thumb-info-wrapper">
-													<img src="{{ asset('desain') }}/PERATURAN_1000x1000.jpg" class="img-fluid border-radius-0" alt="">
+													<img src="{{ asset('desain') }}/GD_IG-08.jpg" class="img-fluid border-radius-0" alt="">
 													<span class="thumb-info-title">
-														<span class="thumb-info-inner">Peraturan Eksternal</span>
+														<span class="thumb-info-inner">Peraturan Umum</span>
 														<span class="thumb-info-type"></span>
 													</span>
 													<span class="thumb-info-action">
@@ -467,7 +476,7 @@
 								</div>
 								<div class="process-step-content">
 									<h4 class="mb-1 text-white-jiul text-5 font-weight-bold">Pelaksanaan</h4>
-									<p class="mb-0 text-white-jiul">Online Eksternal: 19-31 Oktober 2019</p>
+									<p class="mb-0 text-white-jiul">Online Umum: 19-31 Oktober 2019</p>
 									<p class="mb-0 text-white-jiul">Online Internal: 28-31 Oktober 2019</p>
 									<p class="mb-0 text-white-jiul">Offline: 2 November 2019</p>
 								</div>
@@ -589,12 +598,16 @@
 
 								<section class="toggle">
 									<label>Apabila saya internal ITS tapi tidak masuk dalam perwakilan fakultas apakah bisa mendaftar?</label>
-									<p style="height: 0px;" class=""> Sangat bisa, dengan mendaftar dibagian eksternal dengan biaya pendaftaran yang sama dengan lainnya</p>
+									<p style="height: 0px;" class=""> Sangat bisa, dengan mendaftar dibagian umum dengan biaya pendaftaran yang sama dengan lainnya</p>
 								</section>
 
 								<section class="toggle">
-									<label>Jika saya termasuk perwakilan fakultas tapi ingin mendaftar eksternal apa diperbolehkan?</label>
+									<label>Jika saya termasuk perwakilan fakultas tapi ingin mendaftar umum apa diperbolehkan?</label>
 									<p style="height: 0px;" class=""> Tentu, Diperbolehkan kok</p>
+								</section>
+								<section class="toggle">
+									<label>Kenapa pendaftaran dibuka sampai tgl 21 namun TM dilaksanakan pada tgl 18 Oktober 2019?</label>
+									<p style="height: 0px;" class=""> Untuk pertandingan penyisihan pertama, kita akan melaksanakan tgl 19 Oktober-21 Oktober 2019 nah disini kita memfasilitasi tim-tim yang gugur dalam mengikuti turnamen lagi dengan mendaftar ulang serta menggunakan Multi slot nya yang diberi batasan 3 slot. Untuk tim yang belum mendaftar sebelumnya juga masih diberi kesempatan lagi kok</p>
 								</section>
 							</div>
 						</div>
@@ -664,8 +677,8 @@
 									</div>
 									<div class="feature-box-info pl-1">
 										<h5 class="font-weight-light text-color-light opacity-7 mb-0">CALL US NOW</h5>
-										<a href="tel:082331211245" class="text-color-light font-weight-semibold text-decoration-none">Hani(WA) - 082331211245</a><br>
-										<a href="tel:082192695300" class="text-color-light font-weight-semibold text-decoration-none">Rio(WA) - 082192695300</a>
+										<a href="https://api.whatsapp.com/send?phone=6282331211245" target="_blank" class="text-color-light font-weight-semibold text-decoration-none">Hani(WA) - 082331211245</a><br>
+										<a href="https://api.whatsapp.com/send?phone=6282192695300" target="_blank" class="text-color-light font-weight-semibold text-decoration-none">Rio(WA) - 082192695300</a>
 									</div>
 								</div>
 							</div>

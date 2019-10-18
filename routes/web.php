@@ -16,9 +16,14 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/pendaftar_internal', function () {
+    return view('pendaftar_internal');
+})->name('pendaftar.internal');
+
 Route::get('/home', function () {
     return redirect()->route('home');
 });
+
 Route::get('/dashboard', 'HomeController@index')->name('home')->middleware(['auth', 'verified']);;
 
 Route::prefix('peserta')->middleware('auth')->group(function () {
@@ -52,5 +57,5 @@ Route::prefix('operator')->name('operator.')->group(function () {
     Route::post('win', 'OperatorController@win')->name('win');
 });
 
-Route::get('/bagan', 'MatchController@index');
-Route::get('/bagan_internal', 'MatchController@index_internal');
+Route::get('/bagan_eksternal', 'MatchController@index')->name('bagan_eksternal');
+Route::get('/bagan_internal', 'MatchController@index_internal')->name('bagan_internal');

@@ -14,6 +14,12 @@ class MatchController extends Controller
         $result = [];
         $round_array = [];
         $i = 0;
+        $bagan = "Eksternal";
+        $rounds_ll = Match::orderBy('id', 'DESC')->first();
+        if($rounds_ll == NULL){
+            $result = null;
+            return view('match', compact('bagan'))->with('result', json_encode($result));
+        }
         $rounds = Match::orderBy('id', 'DESC')->first()->round;
         // return $rounds;
         $round = 1;
@@ -100,7 +106,8 @@ class MatchController extends Controller
         // $result = "wkwk";
 
         // return dd($result);
-        return view('match')->with('result', json_encode($result));
+        // return view('match')->with('result', json_encode($result));
+        return view('match', compact('bagan'))->with('result', json_encode($result));
     }
 
     public function index_internal()
@@ -108,7 +115,15 @@ class MatchController extends Controller
         $result = [];
         $round_array = [];
         $i = 0;
-        $rounds = Match_Internal::orderBy('id', 'DESC')->first()->round;
+        $bagan = "Internal";
+        $rounds_ll = Match_Internal::orderBy('id', 'DESC')->first();
+        if($rounds_ll == NULL){
+            $result = null;
+            return view('match', compact('bagan'))->with('result', json_encode($result));
+        }
+
+        $rounds = $rounds_ll->round;
+
         // return $rounds;
         $round = 1;
         for ($j = $round; $j <= $rounds; $j = $j + 1) {
@@ -194,6 +209,7 @@ class MatchController extends Controller
         // $result = "wkwk";
 
         // return dd($result);
-        return view('match')->with('result', json_encode($result));
+        // return view('match')->with('result', json_encode($result));
+        return view('match', compact('bagan'))->with('result', json_encode($result));
     }
 }

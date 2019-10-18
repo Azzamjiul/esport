@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Bagan</title>
     <link rel="stylesheet" href="{{ asset('css/jquery.bracket.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.gracket.css') }}">
 </head>
 
 <body>
-    <!-- <div class="tournament"></div> -->
-    <!-- <div class="tournament"></div> -->
+    <h1>Bagan {{ $bagan }}</h1>
     <div class="tournament_1"></div>
     <script src="{{asset('js/core/jquery.min.js')}}"></script>
     <script src="{{asset('js/jquery.gracket.min.js')}}"></script>
