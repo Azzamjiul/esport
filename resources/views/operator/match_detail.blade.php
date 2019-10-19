@@ -19,13 +19,13 @@
                             <form action="" method="post" enctype="multipart/form-data">
                             @csrf
                                 <div class="form-group">
-                                    <label for="">Screenshots</label><br>
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->foto1) }}"><a><br>
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->foto2) }}"><a><br>
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->foto3) }}"><a><br>
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->foto4) }}"><a><br>
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->foto5) }}"><a><br>
-                                        <a href="#" target="blank"><img width="150px" src="{{ url('/team_detail/'.$photo->foto6) }}"><a>
+                                    <label for="">Screenshots </label><br>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_pertandingan/'.$photo->foto1) }}"><a><br>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_pertandingan/'.$photo->foto2) }}"><a><br>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_pertandingan/'.$photo->foto3) }}"><a><br>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_pertandingan/'.$photo->foto4) }}"><a><br>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_pertandingan/'.$photo->foto5) }}"><a><br>
+                                        <a href="#" target="blank"><img width="150px" src="{{ url('/bukti_pertandingan/'.$photo->foto6) }}"><a>
                                 </div>
                             </form>
                         </div>

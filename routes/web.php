@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes(['verify' => true]);
+Auth::routes();
 
 Route::get('/', function () {
     return view('index');
@@ -24,12 +24,13 @@ Route::get('/home', function () {
     return redirect()->route('home');
 });
 
-Route::get('/dashboard', 'HomeController@index')->name('home')->middleware(['auth', 'verified']);;
+Route::get('/dashboard', 'HomeController@index')->name('home')->middleware(['auth']);;
 
 Route::prefix('peserta')->middleware('auth')->group(function () {
     Route::resource('peserta', 'PesertaController');
     Route::post('simpan_tim_permanen', 'PesertaController@simpan_tim_permanen')->name('peserta.simpan_tim_permanen');
     Route::post('upload_bukti', 'PesertaController@upload_bukti')->name('peserta.upload_bukti');
+    Route::post('store_foto_pertandingan/{id}', 'PesertaController@store_foto_pertandingan')->name('peserta.store_foto_pertandingan');
 });
 
 Route::prefix('operator')->middleware('operator')->name('operator.')->group(function () {

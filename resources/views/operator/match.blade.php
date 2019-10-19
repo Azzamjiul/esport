@@ -49,6 +49,8 @@
                                 @else
                                 <form action="{{route('operator.win')}}" method="post">
                                     @csrf
+                                    <input type="hidden" name="player1" value="{{$result[$i][$j][0]['id']}}">
+                                    <input type="hidden" name="player2" value="{{$result[$i][$j][1]['id']}}">
                                     <select name="winner_id" class="form-control" id="select">
                                         <option value="{{$result[$i][$j][0]['id']}}">{{$result[$i][$j][0]['name']}}</option>
                                         @if(isset($result[$i][$j][1]))

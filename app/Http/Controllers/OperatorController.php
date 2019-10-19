@@ -349,10 +349,15 @@ class OperatorController extends Controller
     }
 
     public function win(Request $request){
-        // return $request;
         $team = Match::find($request->winner_id);
         $team->update([
             'score' => 1,
+        ]);
+        Match::find($request->player1)->update([
+            'status' => 1
+        ]);
+        Match::find($request->player2)->update([
+            'status' => 1
         ]);
         Match::create([
             'id_name' => $team->id,
@@ -360,6 +365,7 @@ class OperatorController extends Controller
                 'seed' => $team->seed,
                 'round' => $team->round + 1,
                 'score' => 0,
+                'status' => 0,
                 'foto1' => 'noimage.jpg',
                 'foto2' => 'noimage.jpg',
                 'foto3' => 'noimage.jpg',

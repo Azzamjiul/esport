@@ -6,6 +6,7 @@ use App\User;
 use App\Team_Detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PesertaController extends Controller
 {
@@ -17,6 +18,7 @@ class PesertaController extends Controller
     {
         $this->path_bukti_bayar = public_path('bukti_bayar');
         $this->path_team_detail = public_path('team_detail');
+        $this->path_bukti_pertandingan = public_path('bukti_pertandingan');
         $this->dimension = '500';
     }
 
@@ -54,19 +56,18 @@ class PesertaController extends Controller
         }
 
         $file = $request->file('identity_card');
-        $ext = $file->getClientOriginalExtension();
-        $fileName = 'member_' . $id . '.' .$ext;
-        $tujuan_upload = $this->path_team_detail . '/team_' . Auth::user()->id;
-
-        $file->move($tujuan_upload,$fileName);
-
-        if ($team_detail->first()->identity_id == 'noimage.jpg') {
+        if ($file == NULL) {
+            return redirect()->route('peserta.index')->with('message-error', 'Foto harus diupload');
             $team_detail->update([
                 'game_id' => $request->game_id,
                 'account_name' => $request->account_name,
                 'full_name' => $request->full_name,
             ]);
         } else {
+            $ext = $file->getClientOriginalExtension();
+            $fileName = 'member_' . $id . '.' . $ext;
+            $tujuan_upload = $this->path_team_detail . '/team_' . Auth::user()->id;
+            $file->move($tujuan_upload, $fileName);
             $team_detail->update([
                 'game_id' => $request->game_id,
                 'account_name' => $request->account_name,
@@ -94,14 +95,51 @@ class PesertaController extends Controller
         ]);
         $file = $request->file('image');
         $ext = $file->getClientOriginalExtension();
-        $fileName = 'team_' . Auth::user()->id . '.' .$ext;
+        $fileName = 'team_' . Auth::user()->id . '.' . $ext;
         $tujuan_upload = $this->path_bukti_bayar;
-        $file->move($tujuan_upload,$fileName);
+        $file->move($tujuan_upload, $fileName);
         User::where('id', Auth::user()->id)->update([
             'bukti_bayar' => $fileName,
             'registration_status' => 1
         ]);
-     
+
         return redirect()->route('home')->with('message-success', 'Bukti pembayaran berhasil diunggah');
+    }
+
+    public function store_foto_pertandingan(Request $request, $id)
+    {
+        $this->validate($request, [
+            'foto1' => 'required',
+            'foto2' => 'required',
+            'foto3' => 'required',
+            'foto4' => 'required',
+            'foto5' => 'required',
+            'foto6' => 'required',
+        ]);
+        DB::beginTransaction();
+        try {
+            $fileName = [];
+            for ($i = 1; $i <= 6; $i++) {
+                $foto = 'foto' . $i;
+                $file = $request->file($foto);
+                $ext = $file->getClientOriginalExtension();
+                $fileName[$i] = 'pertandingan_' . $id . '_foto_' . $i . '.' . $ext;
+                $tujuan_upload = $this->path_bukti_pertandingan;
+                $file->move($tujuan_upload, $fileName[$i]);
+            }
+            DB::table('pertandingan')->where('id', $id)->update([
+                'foto1' => $fileName[1],
+                'foto2' => $fileName[2],
+                'foto3' => $fileName[3],
+                'foto4' => $fileName[4],
+                'foto5' => $fileName[5],
+                'foto6' => $fileName[6],
+            ]);
+            DB::commit();
+            return redirect()->route('home')->with('message-success', 'Foto pertandingan berhasil diperbaharui');
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return redirect()->route('home')->with('message-error', 'Foto pertandingan gagal diperbaharui');
+        }
     }
 }

@@ -11,7 +11,7 @@ class Match extends Model
     protected $table = 'pertandingan';
 
     protected $fillable = [
-        'id_name', 'name', 'seed', 'round', 'score', 'foto1', 'foto2', 'foto3', 'foto4', 'foto5', 'foto6', 'fk_operator_id',
+        'id_name', 'name', 'seed', 'round', 'score', 'status' , 'foto1', 'foto2', 'foto3', 'foto4', 'foto5', 'foto6', 'fk_operator_id',
     ];
 
     public function team_id1()
