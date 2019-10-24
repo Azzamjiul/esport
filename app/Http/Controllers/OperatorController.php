@@ -360,7 +360,7 @@ class OperatorController extends Controller
             'status' => 1
         ]);
         Match::create([
-            'id_name' => $team->id,
+                'id_name' => $team->id_name,
                 'name' => $team->name,
                 'seed' => $team->seed,
                 'round' => $team->round + 1,

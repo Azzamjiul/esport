@@ -25,7 +25,10 @@ class MatchController extends Controller
         $round = 1;
         for ($j = $round; $j <= $rounds; $j = $j + 1) {
             $matches = Match::where('round', $j)->orderBy('seed', 'ASC')->get();
+            // return ($matches[70]);
             // $result[] = count($matches);
+            $hoho = count($matches)-1;
+            // return $matches[$hoho-1];
             if (count($matches) > 1) {
                 if (count($matches) % 2 == 0) {
                     for ($i = 0; $i < count($matches); $i = $i + 2) {
@@ -50,7 +53,7 @@ class MatchController extends Controller
                     }
                 } else {
                     $wk = 0;
-                    for ($i = 0; $i < count($matches)-1; $i = $i + 2) {
+                    for ($i = 0; $i < $hoho; $i = $i + 2) {
                         $round_array[] =
                             // per round
                             [
@@ -59,14 +62,14 @@ class MatchController extends Controller
                                     "id"    =>   $matches[$i]->id,
                                     "seed"  =>   $matches[$i]->seed,
                                     "round" =>   $matches[$i]->round,
-                                    "score" =>   $matches[$i]->score
+                                    "score" =>   $i //$matches[$i]->score
                                 ],
                                 [
                                     "name"  =>   $matches[$i + 1]->name,
                                     "id"    =>   $matches[$i + 1]->id,
                                     "seed"  =>   $matches[$i + 1]->seed,
                                     "round" =>   $matches[$i + 1]->round,
-                                    "score" =>   $matches[$i + 1]->score
+                                    "score" =>   $i+1 //$matches[$i + 1]->score
                                 ],
                             ];
                             
@@ -100,6 +103,7 @@ class MatchController extends Controller
                     ];
             }
             $result[] = $round_array;
+            // return $result;
             $round_array = [];
         }
 

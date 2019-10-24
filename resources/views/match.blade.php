@@ -12,56 +12,13 @@
 
 <body>
     <h1>Bagan {{ $bagan }}</h1>
-    <div class="tournament_1"></div>
+    <div class="tournament"></div>
     <script src="{{asset('js/core/jquery.min.js')}}"></script>
     <script src="{{asset('js/jquery.gracket.min.js')}}"></script>
     <script>
-        myData = [
-            // round 1
-            [
-                // match 1
-                [{
-                    "name": "Erik Zettersten",
-                    "id": "erik-zettersten",
-                    "seed": 1,
-                    "displaySeed": "D1",
-                    "score": 47
-                }, {
-                    "name": "Andrew Miller",
-                    "id": "andrew-miller",
-                    "seed": 2
-                }],
-                // match 2
-                [{
-                    "name": "James Coutry",
-                    "id": "james-coutry",
-                    "seed": 3
-                }, {
-                    "name": "Sam Merrill",
-                    "id": "sam-merrill",
-                    "seed": 4
-                }],
-            ],
-            [
-                [{
-                    "name": "Erik Zettersten",
-                    "id": "erik-zettersten",
-                    "seed": 1
-                }, {
-                    "name": "James Coutry",
-                    "id": "james-coutry",
-                    "seed": 3
-                }],
-            ]
-        ];
-
         var datahehe = {!! $result !!}
-
+        console.log(datahehe)
         $(".tournament").gracket({
-            src: myData
-        });
-
-        $(".tournament_1").gracket({
             src: datahehe
         })
     </script>
