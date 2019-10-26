@@ -32,12 +32,22 @@ class HomeController extends Controller
             $data = Auth::user();
 
             $next_match = DB::table('pertandingan')->where('id_name', Auth::user()->id)->where('status', 0)->first();
+            $matches = DB::table('pertandingan')->where('status', 0)->orderBy('round', 'ASC')->orderBy('seed', 'ASC')->get();//return $matches;
             if($next_match != NULL){
-                if($next_match->id % 2 == 0){
-                    $next_lawan = DB::table('pertandingan')->where('id', $next_match->id - 1)->where('status', 0)->first();
-                }else{
-                    $next_lawan = DB::table('pertandingan')->where('id', $next_match->id + 1)->where('status', 0)->first();
+                $last_item = $current_item = 0;
+                for($i = 0; $i < count($matches); $i++){
+                    $current_item = $matches[$i];
+                    if($matches[$i]->id_name == Auth::user()->id){
+                        if($i % 2 == 0){
+                            $next_lawan = $last_item;
+                        }else{
+                            $next_lawan = $matches[$i+1];
+                        }
+                        break;
+                    }
+                    $last_item = $current_item;
                 }
+
                 $enemy = User::find($next_lawan->id_name);
                 $next_lawan_details = Team_Detail::where('fk_team_id', $next_lawan->id_name)->where('game_id','!=','default')->get();
                 $team_details = Team_Detail::where('fk_team_id', $data->id)->where('game_id','!=','default')->get();
